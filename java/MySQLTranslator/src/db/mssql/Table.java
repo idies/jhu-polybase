@@ -40,7 +40,7 @@ public class Table{
 	public void createStatistics(PrintStream out) {
 		if(primaryKey != null)
 		{
-			out.printf("create statistics [%s_pk] on [%s] (%s);\n",name,name, String.join(",",primaryKey));
+			out.printf("create statistics [%s_pk] on [%s] (%s) with fullscan;\n",name,name, String.join(",",primaryKey));
 		}
 
 	}
