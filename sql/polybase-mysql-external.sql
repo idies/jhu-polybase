@@ -17,7 +17,14 @@ PUSHDOWN = ON,
 CREDENTIAL = MyCred2
 );
 
-
+--this one doesn't have the count(*) error
+CREATE EXTERNAL DATA SOURCE mydsp016_nospace
+WITH (
+LOCATION = 'odbc://172.23.250.16:3306',
+CONNECTION_OPTIONS = 'Driver={Mysql ODBC 8.0 Unicode Driver};IGNORE_SPACE=1; ServerNode = 172.23.250.16:3306',
+PUSHDOWN = ON,
+CREDENTIAL = MyCred2
+);
 
 
 
