@@ -13,6 +13,10 @@ public class Column {
 	public void create(PrintStream out, boolean external ){
 		out.printf("  [%s] %s",name,datatype);
 		if(length != null){
+			if(isNtype() && Integer.parseInt(length) > Util.MAX_NLENGTH)
+				length=String.valueOf(Util.MAX_NLENGTH);
+			else if(Integer.parseInt(length) > Util.MAX_LENGTH)
+				length=String.valueOf(Util.MAX_LENGTH);
 			out.printf("(%s",length);
 			if(precision != null)
 				out.printf(",%s", precision);
@@ -22,5 +26,10 @@ public class Column {
 			out.append(" ").append(nullnotnull);
 		if(!external && defaultvalue != null)
 			out.append(" DEFAULT ").append(defaultvalue);
+	}
+	
+	public boolean isNtype() {
+		return "NCHAR".equals(datatype.toUpperCase())
+				|| "NVARCHAR".equals(datatype.toUpperCase());
 	}
 }

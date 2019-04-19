@@ -2,6 +2,9 @@ package db.mssql;
 
 public class Util {
 
+	public static int MAX_LENGTH=8000;
+	public static int MAX_NLENGTH=4000;
+	
 	public static String normalize(String n){
 		String name = n;
 		if(n.startsWith("`")){
