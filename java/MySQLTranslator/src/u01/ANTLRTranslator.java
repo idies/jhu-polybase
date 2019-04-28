@@ -38,7 +38,7 @@ public class ANTLRTranslator {
 			DDLs ddls = v.visitDdl_clauses(ct.ddl_clauses());
 			// data_source=mydsp016 location=cbioportal.<tablename>
 			ExternalTableWriter etw = new ExternalTableWriter(DataSourceName,DBName);
-			ddls.write(System.out, etw);
+//			ddls.write(System.out, etw);
 			//test: write out to individual files
 			//set FileOutputStream to "false" to overwrite exisiting files
 			//TODO: maybe make this configurable?

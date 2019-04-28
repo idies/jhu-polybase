@@ -37,6 +37,10 @@ public class Table{
 		}
 		out.printf(")");
 	}
+	/**
+	 * @todo add statistics for indexes and foreign keys
+	 * @param out
+	 */
 	public void createStatistics(PrintStream out) {
 		if(primaryKey != null)
 		{
