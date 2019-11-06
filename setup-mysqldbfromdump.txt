@@ -1,0 +1,27 @@
+A. How to set up cBioPortal-MySQL database from its MySQL dump file. This database contains only public studies.
+
+1. MySQL Database schema can be found:
+
+https://github.com/cBioPortal/cbioportal/blob/master/db-scripts/src/main/resources/cgds.sql
+
+2. CBioPortal public MySQL exports page where MySQL database snapshots can be found:
+
+http://download.cbioportal.org/mysql-snapshots/mysql-snapshots-toc.html
+
+
+B. SciServer cBioPortal-MySQL database versions
+
+list containting 
+[CBioPortal-mysql version] 
+-[cgds.sql file version] 
+-[cBioPortal dump file name] created [create date]
+---------------------------------------------------------------------                      
+1. xxxx (the current one) 
+- roughly creatd in May 2019 the rest information TBD
+
+2. yyyy (the new version) 
+- Merge master to release-3.1.0 
+  commit 74d74b0701b76d9bd373dba610bcf626ba99b49c) 
+  cf) the most recent ER diagram is found here https://github.com/cBioPortal/cbioportal/blob/master/db-scripts/src/main/resources/cbioportal-er-diagram_v2.7.0.png
+
+- public-portal-dump.20190601.v2.8.2.sql.gz created at zzzzz
