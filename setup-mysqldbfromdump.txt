@@ -24,4 +24,4 @@ list containting
   commit 74d74b0701b76d9bd373dba610bcf626ba99b49c) 
   cf) the most recent ER diagram is found here https://github.com/cBioPortal/cbioportal/blob/master/db-scripts/src/main/resources/cbioportal-er-diagram_v2.7.0.png
 
-- public-portal-dump.20190601.v2.8.2.sql.gz created at zzzzz
+- http://download.cbioportal.org/mysql-snapshots/public-portal-dump.latest.sql.gz created at zzzzz
