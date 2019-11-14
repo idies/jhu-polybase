@@ -1,4 +1,4 @@
-// Generated from ./grammars/mysql_ddl.g4 by ANTLR 4.5.3
+// Generated from ./grammars/mysql_ddl.g4 by ANTLR 4.7.2
 package mysql;
 
 import org.antlr.v4.runtime.ParserRuleContext;

@@ -24,6 +24,11 @@ public class ANTLRTranslator {
 
 	public static void main(String[] args) throws Exception {
 
+		if(args.length != 1)
+		{
+			System.out.println("usage: ANTLRTranslator <ddl-file-name>");
+		}
+		
 		String DataSourceName, DBName;
 		
 		try {
@@ -31,6 +36,7 @@ public class ANTLRTranslator {
 			//TODO: make these command line args, or config file?
 			DataSourceName = "mydsp016_nospace";
 			DBName = "cbioportal";
+			String outfilePrefix=DBName+"-20191114";
 			
 			ANTLRTranslator t = new ANTLRTranslator();
 			mysql_ddlParser.BatchContext ct = t.parse(new File(args[0]));
@@ -42,10 +48,10 @@ public class ANTLRTranslator {
 			//test: write out to individual files
 			//set FileOutputStream to "false" to overwrite exisiting files
 			//TODO: maybe make this configurable?
-			ddls.writeDropStatements(new PrintStream(new FileOutputStream(DBName + "-drop.sql",false)), etw);
-			ddls.writeCreateStatements(new PrintStream(new FileOutputStream(DBName + "-create.sql",false)), etw);
-			ddls.writeStatisticsStatements(new PrintStream(new FileOutputStream(DBName + "-stats.sql",false)), etw);
-			ddls.writeTestQueries(new PrintStream(new FileOutputStream(DBName + "-testqueries.sql",false)), etw);
+			ddls.writeDropStatements(new PrintStream(new FileOutputStream(outfilePrefix + "-drop.sql",false)), etw);
+			ddls.writeCreateStatements(new PrintStream(new FileOutputStream(outfilePrefix + "-create.sql",false)), etw);
+			ddls.writeStatisticsStatements(new PrintStream(new FileOutputStream(outfilePrefix + "-stats.sql",false)), etw);
+			ddls.writeTestQueries(new PrintStream(new FileOutputStream(outfilePrefix + "-testqueries.sql",false)), etw);
 			// print(ct);
 		} catch (Exception e) {
 			e.printStackTrace();

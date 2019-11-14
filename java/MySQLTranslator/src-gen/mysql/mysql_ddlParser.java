@@ -1,4 +1,4 @@
-// Generated from ./grammars/mysql_ddl.g4 by ANTLR 4.5.3
+// Generated from ./grammars/mysql_ddl.g4 by ANTLR 4.7.2
 package mysql;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class mysql_ddlParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.5.3", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.7.2", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -119,141 +119,151 @@ public class mysql_ddlParser extends Parser {
 		RULE_ms_data_type = 39, RULE_data_type = 40, RULE_default_value = 41, 
 		RULE_constant = 42, RULE_sign = 43, RULE_id = 44, RULE_simple_id = 45, 
 		RULE_comparison_operator = 46, RULE_assignment_operator = 47, RULE_file_size = 48;
-	public static final String[] ruleNames = {
-		"mysql_ddl_file", "batch", "ddl_clauses", "ddl_clause", "create_index", 
-		"create_table", "table_options", "table_option", "char_set", "table_comment", 
-		"column_comment", "alter_table", "drop_index", "drop_table", "column_def_table_constraint", 
-		"column_definition", "column_definition1", "column_default", "constant_expression", 
-		"column_constraint", "table_constraint", "table_unique_constraint", "table_index_constraint", 
-		"table_foreign_key_def", "fk_on_delete", "fk_on_update", "full_table_name", 
-		"table_name", "simple_name", "func_proc_name", "ddl_object", "full_column_name", 
-		"column_name_list", "sorted_column_name_list", "cursor_name", "on_off", 
-		"clustered", "null_notnull", "scalar_function_name", "ms_data_type", "data_type", 
-		"default_value", "constant", "sign", "id", "simple_id", "comparison_operator", 
-		"assignment_operator", "file_size"
-	};
+	private static String[] makeRuleNames() {
+		return new String[] {
+			"mysql_ddl_file", "batch", "ddl_clauses", "ddl_clause", "create_index", 
+			"create_table", "table_options", "table_option", "char_set", "table_comment", 
+			"column_comment", "alter_table", "drop_index", "drop_table", "column_def_table_constraint", 
+			"column_definition", "column_definition1", "column_default", "constant_expression", 
+			"column_constraint", "table_constraint", "table_unique_constraint", "table_index_constraint", 
+			"table_foreign_key_def", "fk_on_delete", "fk_on_update", "full_table_name", 
+			"table_name", "simple_name", "func_proc_name", "ddl_object", "full_column_name", 
+			"column_name_list", "sorted_column_name_list", "cursor_name", "on_off", 
+			"clustered", "null_notnull", "scalar_function_name", "ms_data_type", 
+			"data_type", "default_value", "constant", "sign", "id", "simple_id", 
+			"comparison_operator", "assignment_operator", "file_size"
+		};
+	}
+	public static final String[] ruleNames = makeRuleNames();
 
-	private static final String[] _LITERAL_NAMES = {
-		null, "'utf8'", null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, null, null, null, null, null, null, 
-		null, null, null, null, null, null, "'='", "'>'", "'<'", "'!'", "'+='", 
-		"'-='", "'*='", "'/='", "'%='", "'&='", "'^='", "'|='", "'.'", "'_'", 
-		"'@'", "'#'", "'$'", "'('", "')'", "','", "';'", "':'", "'*'", "'/'", 
-		"'%'", "'+'", "'-'", "'~'", "'|'", "'&'", "'^'"
-	};
-	private static final String[] _SYMBOLIC_NAMES = {
-		null, null, "ACTION", "ADD", "ALL", "ALTER", "AND", "ANY", "AS", "ASC", 
-		"AUTHORIZATION", "AUTO_INCREMENT", "BACKUP", "BEGIN", "BETWEEN", "BREAK", 
-		"BROWSE", "BULK", "BY", "CASCADE", "CASE", "CHANGETABLE", "CHANGES", "CHECK", 
-		"CHECKPOINT", "CLOSE", "CLUSTERED", "COALESCE", "COLLATE", "COLUMN", "COMMIT", 
-		"COMPUTE", "CONSTRAINT", "CONTAINMENT", "CONTAINS", "CONTAINSTABLE", "CONTINUE", 
-		"CONVERT", "CREATE", "CROSS", "CURRENT", "CURRENT_DATE", "CURRENT_TIME", 
-		"CURRENT_TIMESTAMP", "CURRENT_USER", "CURSOR", "DATABASE", "DBCC", "DEALLOCATE", 
-		"DECLARE", "DEFAULT", "DELETE", "DENY", "DESC", "DISK", "DISTINCT", "DISTRIBUTED", 
-		"DROP", "DUMP", "ELSE", "END", "ENGINE", "ERRLVL", "ESCAPE", "EXCEPT", 
-		"EXECUTE", "EXISTS", "EXIT", "EXTERNAL", "FETCH", "FILE", "FILENAME", 
-		"FILLFACTOR", "FOR", "FORCESEEK", "FOREIGN", "FREETEXT", "FREETEXTTABLE", 
-		"FROM", "FULL", "FUNCTION", "GOTO", "GRANT", "GROUP", "HAVING", "IDENTITY", 
-		"IDENTITYCOL", "IDENTITY_INSERT", "IF", "IN", "INDEX", "INNER", "INSERT", 
-		"INTERSECT", "INTO", "IS", "JOIN", "KEY", "KILL", "LEFT", "LIKE", "LINENO", 
-		"LOAD", "LOG", "MERGE", "NATIONAL", "NOCHECK", "NONCLUSTERED", "NONE", 
-		"NO", "NOT", "NULL", "NULLIF", "OF", "OFF", "OFFSETS", "ON", "OPEN", "OPENDATASOURCE", 
-		"OPENQUERY", "OPENROWSET", "OPENXML", "OPTION", "OR", "ORDER", "OUTER", 
-		"OVER", "PARTIAL", "PERCENT", "PIVOT", "PLAN", "PRECISION", "PRIMARY", 
-		"PRINT", "PROC", "PROCEDURE", "PUBLIC", "RAISERROR", "READ", "READTEXT", 
-		"RECONFIGURE", "REFERENCES", "REPLICATION", "RESTORE", "RESTRICT", "RETURN", 
-		"REVERT", "REVOKE", "RIGHT", "ROLLBACK", "ROWCOUNT", "ROWGUIDCOL", "RULE", 
-		"SAVE", "SCHEMA", "SECURITYAUDIT", "SELECT", "SEMANTICKEYPHRASETABLE", 
-		"SEMANTICSIMILARITYDETAILSTABLE", "SEMANTICSIMILARITYTABLE", "SESSION_USER", 
-		"SET", "SETUSER", "SHUTDOWN", "SOME", "STATISTICS", "SYSTEM_USER", "TABLE", 
-		"TABLESAMPLE", "TEXTSIZE", "THEN", "TO", "TOP", "TRAN", "TRANSACTION", 
-		"TRIGGER", "TRUNCATE", "TRY_CONVERT", "TSEQUAL", "UNION", "UNIQUE", "UNPIVOT", 
-		"UNSIGNED", "UPDATE", "UPDATETEXT", "USE", "USER", "VALUES", "VARYING", 
-		"VIEW", "WAITFOR", "WHEN", "WHERE", "WHILE", "WITH", "WITHIN", "WRITETEXT", 
-		"ABSOLUTE", "AFTER", "ALLOWED", "ALLOW_SNAPSHOT_ISOLATION", "ANSI_NULLS", 
-		"ANSI_NULL_DEFAULT", "ANSI_PADDING", "ANSI_WARNINGS", "APPLY", "ARITHABORT", 
-		"AUTO", "AUTO_CLEANUP", "AUTO_CLOSE", "AUTO_CREATE_STATISTICS", "AUTO_SHRINK", 
-		"AUTO_UPDATE_STATISTICS", "AUTO_UPDATE_STATISTICS_ASYNC", "AVG", "BASE64", 
-		"BINARY_CHECKSUM", "BULK_LOGGED", "CALLER", "CAST", "CATCH", "CHANGE_RETENTION", 
-		"CHANGE_TRACKING", "CHARSET", "CHECKSUM", "CHECKSUM_AGG", "COMMENT", "COMMITTED", 
-		"COMPATIBILITY_LEVEL", "CONCAT", "CONCAT_NULL_YIELDS_NULL", "CONTROL", 
-		"COOKIE", "COUNT", "COUNT_BIG", "CURSOR_CLOSE_ON_COMMIT", "CURSOR_DEFAULT", 
-		"DATEADD", "DATEDIFF", "DATENAME", "DATEPART", "DATE_CORRELATION_OPTIMIZATION", 
-		"DAYS", "DB_CHAINING", "DEFAULT_FULLTEXT_LANGUAGE", "DEFAULT_LANGUAGE", 
-		"DELAY", "DELAYED_DURABILITY", "DELETED", "DENSE_RANK", "DIRECTORY_NAME", 
-		"DISABLE", "DISABLED", "DISABLE_BROKER", "DYNAMIC", "EMERGENCY", "ENABLE_BROKER", 
-		"ENCRYPTION", "ERROR_BROKER_CONVERSATIONS", "EXPAND", "FAST", "FAST_FORWARD", 
-		"FILEGROUP", "FILEGROWTH", "FILESTREAM", "FIRST", "FOLLOWING", "FORCE", 
-		"FORCED", "FORWARD_ONLY", "FULLSCAN", "GB", "GLOBAL", "GO", "GROUPING", 
-		"GROUPING_ID", "HADR", "HASH", "HONOR_BROKER_PRIORITY", "HOURS", "IGNORE_NONCLUSTERED_COLUMNSTORE_INDEX", 
-		"IMMEDIATE", "IMPERSONATE", "INCREMENTAL", "INSENSITIVE", "INSERTED", 
-		"ISOLATION", "KB", "KEEP", "KEEPFIXED", "KEYSET", "LAST", "LEVEL", "LOCAL", 
-		"LOCK_ESCALATION", "LOGIN", "LOOP", "MARK", "MAX", "MAXDOP", "MAXRECURSION", 
-		"MAXSIZE", "MB", "MEMORY_OPTIMIZED_DATA", "MIN", "MINUTES", "MIN_ACTIVE_ROWVERSION", 
-		"MIXED_PAGE_ALLOCATION", "MODIFY", "MULTI_USER", "NAME", "NESTED_TRIGGERS", 
-		"NEW_BROKER", "NEXT", "NOCOUNT", "NOEXPAND", "NON_TRANSACTED_ACCESS", 
-		"NORECOMPUTE", "NO_WAIT", "NTILE", "NUMBER", "NUMERIC_ROUNDABORT", "OFFLINE", 
-		"OFFSET", "ONLINE", "ONLY", "OPTIMISTIC", "OPTIMIZE", "OUT", "OUTPUT", 
-		"OWNER", "PAGE_VERIFY", "PARAMETERIZATION", "PARTITION", "PATH", "PRECEDING", 
-		"PRIOR", "PRIVILEGES", "QUOTED_IDENTIFIER", "RANGE", "RANK", "READONLY", 
-		"READ_COMMITTED_SNAPSHOT", "READ_ONLY", "READ_WRITE", "RECOMPILE", "RECOVERY", 
-		"RECURSIVE_TRIGGERS", "RELATIVE", "REMOTE", "REPEATABLE", "RESTRICTED_USER", 
-		"ROBUST", "ROOT", "ROW", "ROWGUID", "ROWS", "ROW_NUMBER", "SAMPLE", "SCHEMABINDING", 
-		"SCROLL", "SCROLL_LOCKS", "SECONDS", "SELF", "SERIALIZABLE", "SHOWPLAN", 
-		"SIMPLE", "SINGLE_USER", "SIZE", "SNAPSHOT", "SPATIAL_WINDOW_MAX_CELLS", 
-		"STATIC", "STATS_STREAM", "STDEV", "STDEVP", "SUM", "TAKE", "TARGET_RECOVERY_TIME", 
-		"TB", "TEXTIMAGE_ON", "THROW", "TIES", "TIME", "TORN_PAGE_DETECTION", 
-		"TRANSFORM_NOISE_WORDS", "TRUSTWORTHY", "TRY", "TWO_DIGIT_YEAR_CUTOFF", 
-		"TYPE", "TYPE_WARNING", "UNBOUNDED", "UNCOMMITTED", "UNKNOWN", "UNLIMITED", 
-		"USING", "VAR", "VARP", "VIEWS", "VIEW_METADATA", "WORK", "XML", "XMLNAMESPACES", 
-		"ZEROFILL", "DOLLAR_ACTION", "BIT", "BINARY", "BOOLEAN", "TINYINT", "SMALLINT", 
-		"MEDIUMINT", "INT", "INTEGER", "BIGINT", "REAL", "FLOAT", "DOUBLE", "DECIMAL", 
-		"NUMERIC", "DATE", "DATETIME", "TIMESTAMP", "YEAR", "CHAR", "CHARACTER", 
-		"VARCHAR", "VARBINARY", "TINYBLOB", "BLOB", "MEDIUMBLOB", "LONGBLOB", 
-		"TINYTEXT", "TEXT", "MEDIUMTEXT", "LONGTEXT", "ENUM", "JSON", "SPACE", 
-		"MULTILINE_COMMENT", "LINE_COMMENT", "DOUBLE_QUOTE_ID", "LEFT_QUOTE_ID", 
-		"SQUARE_BRACKET_ID", "LOCAL_ID", "DECIMAL_LITERAL", "ID", "STRING", "BINARY_LITERAL", 
-		"FLOAT_LITERAL", "REAL_LITERAL", "EQUAL", "GREATER", "LESS", "EXCLAMATION", 
-		"PLUS_ASSIGN", "MINUS_ASSIGN", "MULT_ASSIGN", "DIV_ASSIGN", "MOD_ASSIGN", 
-		"AND_ASSIGN", "XOR_ASSIGN", "OR_ASSIGN", "DOT", "UNDERLINE", "AT", "SHARP", 
-		"DOLLAR", "LR_BRACKET", "RR_BRACKET", "COMMA", "SEMI", "COLON", "STAR", 
-		"DIVIDE", "MODULE", "PLUS", "MINUS", "BIT_NOT", "BIT_OR", "BIT_AND", "BIT_XOR"
-	};
+	private static String[] makeLiteralNames() {
+		return new String[] {
+			null, "'utf8'", null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, null, null, null, null, null, null, 
+			null, null, null, null, null, null, "'='", "'>'", "'<'", "'!'", "'+='", 
+			"'-='", "'*='", "'/='", "'%='", "'&='", "'^='", "'|='", "'.'", "'_'", 
+			"'@'", "'#'", "'$'", "'('", "')'", "','", "';'", "':'", "'*'", "'/'", 
+			"'%'", "'+'", "'-'", "'~'", "'|'", "'&'", "'^'"
+		};
+	}
+	private static final String[] _LITERAL_NAMES = makeLiteralNames();
+	private static String[] makeSymbolicNames() {
+		return new String[] {
+			null, null, "ACTION", "ADD", "ALL", "ALTER", "AND", "ANY", "AS", "ASC", 
+			"AUTHORIZATION", "AUTO_INCREMENT", "BACKUP", "BEGIN", "BETWEEN", "BREAK", 
+			"BROWSE", "BULK", "BY", "CASCADE", "CASE", "CHANGETABLE", "CHANGES", 
+			"CHECK", "CHECKPOINT", "CLOSE", "CLUSTERED", "COALESCE", "COLLATE", "COLUMN", 
+			"COMMIT", "COMPUTE", "CONSTRAINT", "CONTAINMENT", "CONTAINS", "CONTAINSTABLE", 
+			"CONTINUE", "CONVERT", "CREATE", "CROSS", "CURRENT", "CURRENT_DATE", 
+			"CURRENT_TIME", "CURRENT_TIMESTAMP", "CURRENT_USER", "CURSOR", "DATABASE", 
+			"DBCC", "DEALLOCATE", "DECLARE", "DEFAULT", "DELETE", "DENY", "DESC", 
+			"DISK", "DISTINCT", "DISTRIBUTED", "DROP", "DUMP", "ELSE", "END", "ENGINE", 
+			"ERRLVL", "ESCAPE", "EXCEPT", "EXECUTE", "EXISTS", "EXIT", "EXTERNAL", 
+			"FETCH", "FILE", "FILENAME", "FILLFACTOR", "FOR", "FORCESEEK", "FOREIGN", 
+			"FREETEXT", "FREETEXTTABLE", "FROM", "FULL", "FUNCTION", "GOTO", "GRANT", 
+			"GROUP", "HAVING", "IDENTITY", "IDENTITYCOL", "IDENTITY_INSERT", "IF", 
+			"IN", "INDEX", "INNER", "INSERT", "INTERSECT", "INTO", "IS", "JOIN", 
+			"KEY", "KILL", "LEFT", "LIKE", "LINENO", "LOAD", "LOG", "MERGE", "NATIONAL", 
+			"NOCHECK", "NONCLUSTERED", "NONE", "NO", "NOT", "NULL", "NULLIF", "OF", 
+			"OFF", "OFFSETS", "ON", "OPEN", "OPENDATASOURCE", "OPENQUERY", "OPENROWSET", 
+			"OPENXML", "OPTION", "OR", "ORDER", "OUTER", "OVER", "PARTIAL", "PERCENT", 
+			"PIVOT", "PLAN", "PRECISION", "PRIMARY", "PRINT", "PROC", "PROCEDURE", 
+			"PUBLIC", "RAISERROR", "READ", "READTEXT", "RECONFIGURE", "REFERENCES", 
+			"REPLICATION", "RESTORE", "RESTRICT", "RETURN", "REVERT", "REVOKE", "RIGHT", 
+			"ROLLBACK", "ROWCOUNT", "ROWGUIDCOL", "RULE", "SAVE", "SCHEMA", "SECURITYAUDIT", 
+			"SELECT", "SEMANTICKEYPHRASETABLE", "SEMANTICSIMILARITYDETAILSTABLE", 
+			"SEMANTICSIMILARITYTABLE", "SESSION_USER", "SET", "SETUSER", "SHUTDOWN", 
+			"SOME", "STATISTICS", "SYSTEM_USER", "TABLE", "TABLESAMPLE", "TEXTSIZE", 
+			"THEN", "TO", "TOP", "TRAN", "TRANSACTION", "TRIGGER", "TRUNCATE", "TRY_CONVERT", 
+			"TSEQUAL", "UNION", "UNIQUE", "UNPIVOT", "UNSIGNED", "UPDATE", "UPDATETEXT", 
+			"USE", "USER", "VALUES", "VARYING", "VIEW", "WAITFOR", "WHEN", "WHERE", 
+			"WHILE", "WITH", "WITHIN", "WRITETEXT", "ABSOLUTE", "AFTER", "ALLOWED", 
+			"ALLOW_SNAPSHOT_ISOLATION", "ANSI_NULLS", "ANSI_NULL_DEFAULT", "ANSI_PADDING", 
+			"ANSI_WARNINGS", "APPLY", "ARITHABORT", "AUTO", "AUTO_CLEANUP", "AUTO_CLOSE", 
+			"AUTO_CREATE_STATISTICS", "AUTO_SHRINK", "AUTO_UPDATE_STATISTICS", "AUTO_UPDATE_STATISTICS_ASYNC", 
+			"AVG", "BASE64", "BINARY_CHECKSUM", "BULK_LOGGED", "CALLER", "CAST", 
+			"CATCH", "CHANGE_RETENTION", "CHANGE_TRACKING", "CHARSET", "CHECKSUM", 
+			"CHECKSUM_AGG", "COMMENT", "COMMITTED", "COMPATIBILITY_LEVEL", "CONCAT", 
+			"CONCAT_NULL_YIELDS_NULL", "CONTROL", "COOKIE", "COUNT", "COUNT_BIG", 
+			"CURSOR_CLOSE_ON_COMMIT", "CURSOR_DEFAULT", "DATEADD", "DATEDIFF", "DATENAME", 
+			"DATEPART", "DATE_CORRELATION_OPTIMIZATION", "DAYS", "DB_CHAINING", "DEFAULT_FULLTEXT_LANGUAGE", 
+			"DEFAULT_LANGUAGE", "DELAY", "DELAYED_DURABILITY", "DELETED", "DENSE_RANK", 
+			"DIRECTORY_NAME", "DISABLE", "DISABLED", "DISABLE_BROKER", "DYNAMIC", 
+			"EMERGENCY", "ENABLE_BROKER", "ENCRYPTION", "ERROR_BROKER_CONVERSATIONS", 
+			"EXPAND", "FAST", "FAST_FORWARD", "FILEGROUP", "FILEGROWTH", "FILESTREAM", 
+			"FIRST", "FOLLOWING", "FORCE", "FORCED", "FORWARD_ONLY", "FULLSCAN", 
+			"GB", "GLOBAL", "GO", "GROUPING", "GROUPING_ID", "HADR", "HASH", "HONOR_BROKER_PRIORITY", 
+			"HOURS", "IGNORE_NONCLUSTERED_COLUMNSTORE_INDEX", "IMMEDIATE", "IMPERSONATE", 
+			"INCREMENTAL", "INSENSITIVE", "INSERTED", "ISOLATION", "KB", "KEEP", 
+			"KEEPFIXED", "KEYSET", "LAST", "LEVEL", "LOCAL", "LOCK_ESCALATION", "LOGIN", 
+			"LOOP", "MARK", "MAX", "MAXDOP", "MAXRECURSION", "MAXSIZE", "MB", "MEMORY_OPTIMIZED_DATA", 
+			"MIN", "MINUTES", "MIN_ACTIVE_ROWVERSION", "MIXED_PAGE_ALLOCATION", "MODIFY", 
+			"MULTI_USER", "NAME", "NESTED_TRIGGERS", "NEW_BROKER", "NEXT", "NOCOUNT", 
+			"NOEXPAND", "NON_TRANSACTED_ACCESS", "NORECOMPUTE", "NO_WAIT", "NTILE", 
+			"NUMBER", "NUMERIC_ROUNDABORT", "OFFLINE", "OFFSET", "ONLINE", "ONLY", 
+			"OPTIMISTIC", "OPTIMIZE", "OUT", "OUTPUT", "OWNER", "PAGE_VERIFY", "PARAMETERIZATION", 
+			"PARTITION", "PATH", "PRECEDING", "PRIOR", "PRIVILEGES", "QUOTED_IDENTIFIER", 
+			"RANGE", "RANK", "READONLY", "READ_COMMITTED_SNAPSHOT", "READ_ONLY", 
+			"READ_WRITE", "RECOMPILE", "RECOVERY", "RECURSIVE_TRIGGERS", "RELATIVE", 
+			"REMOTE", "REPEATABLE", "RESTRICTED_USER", "ROBUST", "ROOT", "ROW", "ROWGUID", 
+			"ROWS", "ROW_NUMBER", "SAMPLE", "SCHEMABINDING", "SCROLL", "SCROLL_LOCKS", 
+			"SECONDS", "SELF", "SERIALIZABLE", "SHOWPLAN", "SIMPLE", "SINGLE_USER", 
+			"SIZE", "SNAPSHOT", "SPATIAL_WINDOW_MAX_CELLS", "STATIC", "STATS_STREAM", 
+			"STDEV", "STDEVP", "SUM", "TAKE", "TARGET_RECOVERY_TIME", "TB", "TEXTIMAGE_ON", 
+			"THROW", "TIES", "TIME", "TORN_PAGE_DETECTION", "TRANSFORM_NOISE_WORDS", 
+			"TRUSTWORTHY", "TRY", "TWO_DIGIT_YEAR_CUTOFF", "TYPE", "TYPE_WARNING", 
+			"UNBOUNDED", "UNCOMMITTED", "UNKNOWN", "UNLIMITED", "USING", "VAR", "VARP", 
+			"VIEWS", "VIEW_METADATA", "WORK", "XML", "XMLNAMESPACES", "ZEROFILL", 
+			"DOLLAR_ACTION", "BIT", "BINARY", "BOOLEAN", "TINYINT", "SMALLINT", "MEDIUMINT", 
+			"INT", "INTEGER", "BIGINT", "REAL", "FLOAT", "DOUBLE", "DECIMAL", "NUMERIC", 
+			"DATE", "DATETIME", "TIMESTAMP", "YEAR", "CHAR", "CHARACTER", "VARCHAR", 
+			"VARBINARY", "TINYBLOB", "BLOB", "MEDIUMBLOB", "LONGBLOB", "TINYTEXT", 
+			"TEXT", "MEDIUMTEXT", "LONGTEXT", "ENUM", "JSON", "SPACE", "MULTILINE_COMMENT", 
+			"LINE_COMMENT", "DOUBLE_QUOTE_ID", "LEFT_QUOTE_ID", "SQUARE_BRACKET_ID", 
+			"LOCAL_ID", "DECIMAL_LITERAL", "ID", "STRING", "BINARY_LITERAL", "FLOAT_LITERAL", 
+			"REAL_LITERAL", "EQUAL", "GREATER", "LESS", "EXCLAMATION", "PLUS_ASSIGN", 
+			"MINUS_ASSIGN", "MULT_ASSIGN", "DIV_ASSIGN", "MOD_ASSIGN", "AND_ASSIGN", 
+			"XOR_ASSIGN", "OR_ASSIGN", "DOT", "UNDERLINE", "AT", "SHARP", "DOLLAR", 
+			"LR_BRACKET", "RR_BRACKET", "COMMA", "SEMI", "COLON", "STAR", "DIVIDE", 
+			"MODULE", "PLUS", "MINUS", "BIT_NOT", "BIT_OR", "BIT_AND", "BIT_XOR"
+		};
+	}
+	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
 	/**
@@ -303,6 +313,7 @@ public class mysql_ddlParser extends Parser {
 		super(input);
 		_interp = new ParserATNSimulator(this,_ATN,_decisionToDFA,_sharedContextCache);
 	}
+
 	public static class Mysql_ddl_fileContext extends ParserRuleContext {
 		public TerminalNode EOF() { return getToken(mysql_ddlParser.EOF, 0); }
 		public List<BatchContext> batch() {
@@ -619,9 +630,11 @@ public class mysql_ddlParser extends Parser {
 		public Table_nameContext table_name() {
 			return getRuleContext(Table_nameContext.class,0);
 		}
+		public TerminalNode LR_BRACKET() { return getToken(mysql_ddlParser.LR_BRACKET, 0); }
 		public Column_name_listContext column_name_list() {
 			return getRuleContext(Column_name_listContext.class,0);
 		}
+		public TerminalNode RR_BRACKET() { return getToken(mysql_ddlParser.RR_BRACKET, 0); }
 		public TerminalNode UNIQUE() { return getToken(mysql_ddlParser.UNIQUE, 0); }
 		public ClusteredContext clustered() {
 			return getRuleContext(ClusteredContext.class,0);
@@ -657,6 +670,7 @@ public class mysql_ddlParser extends Parser {
 			setState(131);
 			match(CREATE);
 			setState(133);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==UNIQUE) {
 				{
@@ -666,6 +680,7 @@ public class mysql_ddlParser extends Parser {
 			}
 
 			setState(136);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==CLUSTERED || _la==NONCLUSTERED) {
 				{
@@ -687,6 +702,7 @@ public class mysql_ddlParser extends Parser {
 			setState(143);
 			column_name_list();
 			setState(145);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==ASC || _la==DESC) {
 				{
@@ -694,7 +710,10 @@ public class mysql_ddlParser extends Parser {
 				_la = _input.LA(1);
 				if ( !(_la==ASC || _la==DESC) ) {
 				_errHandler.recoverInline(this);
-				} else {
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
 					consume();
 				}
 				}
@@ -721,11 +740,17 @@ public class mysql_ddlParser extends Parser {
 		public Table_nameContext table_name() {
 			return getRuleContext(Table_nameContext.class,0);
 		}
+		public TerminalNode LR_BRACKET() { return getToken(mysql_ddlParser.LR_BRACKET, 0); }
 		public List<Column_def_table_constraintContext> column_def_table_constraint() {
 			return getRuleContexts(Column_def_table_constraintContext.class);
 		}
 		public Column_def_table_constraintContext column_def_table_constraint(int i) {
 			return getRuleContext(Column_def_table_constraintContext.class,i);
+		}
+		public TerminalNode RR_BRACKET() { return getToken(mysql_ddlParser.RR_BRACKET, 0); }
+		public List<TerminalNode> COMMA() { return getTokens(mysql_ddlParser.COMMA); }
+		public TerminalNode COMMA(int i) {
+			return getToken(mysql_ddlParser.COMMA, i);
 		}
 		public Table_optionsContext table_options() {
 			return getRuleContext(Table_optionsContext.class,0);
@@ -788,6 +813,7 @@ public class mysql_ddlParser extends Parser {
 			setState(161);
 			match(RR_BRACKET);
 			setState(163);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << AUTO_INCREMENT) | (1L << DEFAULT) | (1L << ENGINE))) != 0) || _la==CHARSET) {
 				{
@@ -797,6 +823,7 @@ public class mysql_ddlParser extends Parser {
 			}
 
 			setState(166);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==COMMENT) {
 				{
@@ -822,6 +849,7 @@ public class mysql_ddlParser extends Parser {
 		public Table_optionContext table_option() {
 			return getRuleContext(Table_optionContext.class,0);
 		}
+		public TerminalNode COMMA() { return getToken(mysql_ddlParser.COMMA, 0); }
 		public Table_optionsContext table_options() {
 			return getRuleContext(Table_optionsContext.class,0);
 		}
@@ -854,6 +882,7 @@ public class mysql_ddlParser extends Parser {
 			setState(168);
 			table_option();
 			setState(171);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==COMMA) {
 				{
@@ -883,6 +912,10 @@ public class mysql_ddlParser extends Parser {
 			return getRuleContext(Char_setContext.class,0);
 		}
 		public TerminalNode ENGINE() { return getToken(mysql_ddlParser.ENGINE, 0); }
+		public List<TerminalNode> EQUAL() { return getTokens(mysql_ddlParser.EQUAL); }
+		public TerminalNode EQUAL(int i) {
+			return getToken(mysql_ddlParser.EQUAL, i);
+		}
 		public IdContext id() {
 			return getRuleContext(IdContext.class,0);
 		}
@@ -916,6 +949,7 @@ public class mysql_ddlParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(176);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==ENGINE) {
 				{
@@ -929,6 +963,7 @@ public class mysql_ddlParser extends Parser {
 			}
 
 			setState(181);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==AUTO_INCREMENT) {
 				{
@@ -942,6 +977,7 @@ public class mysql_ddlParser extends Parser {
 			}
 
 			setState(184);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==DEFAULT) {
 				{
@@ -953,6 +989,7 @@ public class mysql_ddlParser extends Parser {
 			setState(186);
 			match(CHARSET);
 			setState(188);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==EQUAL) {
 				{
@@ -1020,6 +1057,7 @@ public class mysql_ddlParser extends Parser {
 	public static class Table_commentContext extends ParserRuleContext {
 		public TerminalNode COMMENT() { return getToken(mysql_ddlParser.COMMENT, 0); }
 		public TerminalNode STRING() { return getToken(mysql_ddlParser.STRING, 0); }
+		public TerminalNode EQUAL() { return getToken(mysql_ddlParser.EQUAL, 0); }
 		public Table_commentContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1049,6 +1087,7 @@ public class mysql_ddlParser extends Parser {
 			setState(194);
 			match(COMMENT);
 			setState(196);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==EQUAL) {
 				{
@@ -1188,6 +1227,7 @@ public class mysql_ddlParser extends Parser {
 		public Table_nameContext table_name() {
 			return getRuleContext(Table_nameContext.class,0);
 		}
+		public TerminalNode SEMI() { return getToken(mysql_ddlParser.SEMI, 0); }
 		public Drop_indexContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1219,6 +1259,7 @@ public class mysql_ddlParser extends Parser {
 			setState(210);
 			match(INDEX);
 			setState(213);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==IF) {
 				{
@@ -1232,6 +1273,7 @@ public class mysql_ddlParser extends Parser {
 			setState(215);
 			((Drop_indexContext)_localctx).name = id();
 			setState(218);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==ON) {
 				{
@@ -1304,6 +1346,7 @@ public class mysql_ddlParser extends Parser {
 			setState(224);
 			match(TABLE);
 			setState(227);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==IF) {
 				{
@@ -1360,6 +1403,7 @@ public class mysql_ddlParser extends Parser {
 		enterRule(_localctx, 28, RULE_column_def_table_constraint);
 		try {
 			setState(233);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case FORCESEEK:
 			case ABSOLUTE:
@@ -1570,6 +1614,7 @@ public class mysql_ddlParser extends Parser {
 			setState(236);
 			data_type();
 			setState(238);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==NOT || _la==NULL) {
 				{
@@ -1579,6 +1624,7 @@ public class mysql_ddlParser extends Parser {
 			}
 
 			setState(241);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==DEFAULT) {
 				{
@@ -1588,6 +1634,7 @@ public class mysql_ddlParser extends Parser {
 			}
 
 			setState(244);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==AUTO_INCREMENT) {
 				{
@@ -1597,6 +1644,7 @@ public class mysql_ddlParser extends Parser {
 			}
 
 			setState(250);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==PRIMARY || _la==UNIQUE) {
 				{
@@ -1604,10 +1652,14 @@ public class mysql_ddlParser extends Parser {
 				_la = _input.LA(1);
 				if ( !(_la==PRIMARY || _la==UNIQUE) ) {
 				_errHandler.recoverInline(this);
-				} else {
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
 					consume();
 				}
 				setState(248);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==KEY) {
 					{
@@ -1620,6 +1672,7 @@ public class mysql_ddlParser extends Parser {
 			}
 
 			setState(254);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==COMMENT) {
 				{
@@ -1692,6 +1745,7 @@ public class mysql_ddlParser extends Parser {
 			setState(257);
 			data_type();
 			setState(259);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==NOT || _la==NULL) {
 				{
@@ -1701,6 +1755,7 @@ public class mysql_ddlParser extends Parser {
 			}
 
 			setState(264);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case DEFAULT:
 				{
@@ -1719,7 +1774,7 @@ public class mysql_ddlParser extends Parser {
 			case COMMENT:
 				break;
 			default:
-				throw new NoViableAltException(this);
+				break;
 			}
 			setState(266);
 			column_comment();
@@ -1788,9 +1843,11 @@ public class mysql_ddlParser extends Parser {
 		public ConstantContext constant() {
 			return getRuleContext(ConstantContext.class,0);
 		}
+		public TerminalNode LR_BRACKET() { return getToken(mysql_ddlParser.LR_BRACKET, 0); }
 		public Constant_expressionContext constant_expression() {
 			return getRuleContext(Constant_expressionContext.class,0);
 		}
+		public TerminalNode RR_BRACKET() { return getToken(mysql_ddlParser.RR_BRACKET, 0); }
 		public Constant_expressionContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -1815,6 +1872,7 @@ public class mysql_ddlParser extends Parser {
 		enterRule(_localctx, 36, RULE_constant_expression);
 		try {
 			setState(277);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case NULL:
 				enterOuterAlt(_localctx, 1);
@@ -1904,6 +1962,7 @@ public class mysql_ddlParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(281);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==CONSTRAINT) {
 				{
@@ -1915,6 +1974,7 @@ public class mysql_ddlParser extends Parser {
 			}
 
 			setState(284);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==NOT || _la==NULL) {
 				{
@@ -1925,6 +1985,7 @@ public class mysql_ddlParser extends Parser {
 
 			{
 			setState(289);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case PRIMARY:
 				{
@@ -1944,6 +2005,7 @@ public class mysql_ddlParser extends Parser {
 				throw new NoViableAltException(this);
 			}
 			setState(292);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==CLUSTERED || _la==NONCLUSTERED) {
 				{
@@ -2037,9 +2099,11 @@ public class mysql_ddlParser extends Parser {
 	}
 
 	public static class Table_unique_constraintContext extends ParserRuleContext {
+		public TerminalNode LR_BRACKET() { return getToken(mysql_ddlParser.LR_BRACKET, 0); }
 		public Sorted_column_name_listContext sorted_column_name_list() {
 			return getRuleContext(Sorted_column_name_listContext.class,0);
 		}
+		public TerminalNode RR_BRACKET() { return getToken(mysql_ddlParser.RR_BRACKET, 0); }
 		public TerminalNode CONSTRAINT() { return getToken(mysql_ddlParser.CONSTRAINT, 0); }
 		public IdContext id() {
 			return getRuleContext(IdContext.class,0);
@@ -2077,6 +2141,7 @@ public class mysql_ddlParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(301);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==CONSTRAINT) {
 				{
@@ -2089,6 +2154,7 @@ public class mysql_ddlParser extends Parser {
 
 			{
 			setState(306);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case PRIMARY:
 				{
@@ -2108,6 +2174,7 @@ public class mysql_ddlParser extends Parser {
 				throw new NoViableAltException(this);
 			}
 			setState(309);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==CLUSTERED || _la==NONCLUSTERED) {
 				{
@@ -2137,9 +2204,11 @@ public class mysql_ddlParser extends Parser {
 	}
 
 	public static class Table_index_constraintContext extends ParserRuleContext {
+		public TerminalNode LR_BRACKET() { return getToken(mysql_ddlParser.LR_BRACKET, 0); }
 		public Sorted_column_name_listContext sorted_column_name_list() {
 			return getRuleContext(Sorted_column_name_listContext.class,0);
 		}
+		public TerminalNode RR_BRACKET() { return getToken(mysql_ddlParser.RR_BRACKET, 0); }
 		public TerminalNode KEY() { return getToken(mysql_ddlParser.KEY, 0); }
 		public TerminalNode INDEX() { return getToken(mysql_ddlParser.INDEX, 0); }
 		public TerminalNode UNIQUE() { return getToken(mysql_ddlParser.UNIQUE, 0); }
@@ -2173,6 +2242,7 @@ public class mysql_ddlParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(316);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==UNIQUE) {
 				{
@@ -2185,10 +2255,14 @@ public class mysql_ddlParser extends Parser {
 			_la = _input.LA(1);
 			if ( !(_la==INDEX || _la==KEY) ) {
 			_errHandler.recoverInline(this);
-			} else {
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
 				consume();
 			}
 			setState(320);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==FORCESEEK || ((((_la - 197)) & ~0x3f) == 0 && ((1L << (_la - 197)) & ((1L << (ABSOLUTE - 197)) | (1L << (APPLY - 197)) | (1L << (AUTO - 197)) | (1L << (AVG - 197)) | (1L << (BASE64 - 197)) | (1L << (CALLER - 197)) | (1L << (CAST - 197)) | (1L << (CATCH - 197)) | (1L << (CHECKSUM_AGG - 197)) | (1L << (COMMITTED - 197)) | (1L << (CONCAT - 197)) | (1L << (CONTROL - 197)) | (1L << (COOKIE - 197)) | (1L << (COUNT - 197)) | (1L << (COUNT_BIG - 197)) | (1L << (DELAY - 197)) | (1L << (DELETED - 197)) | (1L << (DENSE_RANK - 197)) | (1L << (DISABLE - 197)) | (1L << (DYNAMIC - 197)) | (1L << (ENCRYPTION - 197)) | (1L << (EXPAND - 197)) | (1L << (FAST - 197)))) != 0) || ((((_la - 261)) & ~0x3f) == 0 && ((1L << (_la - 261)) & ((1L << (FAST_FORWARD - 261)) | (1L << (FIRST - 261)) | (1L << (FOLLOWING - 261)) | (1L << (FORCE - 261)) | (1L << (FORCED - 261)) | (1L << (FORWARD_ONLY - 261)) | (1L << (FULLSCAN - 261)) | (1L << (GLOBAL - 261)) | (1L << (GO - 261)) | (1L << (GROUPING - 261)) | (1L << (GROUPING_ID - 261)) | (1L << (HASH - 261)) | (1L << (IGNORE_NONCLUSTERED_COLUMNSTORE_INDEX - 261)) | (1L << (IMPERSONATE - 261)) | (1L << (INSENSITIVE - 261)) | (1L << (INSERTED - 261)) | (1L << (ISOLATION - 261)) | (1L << (KEEP - 261)) | (1L << (KEEPFIXED - 261)) | (1L << (KEYSET - 261)) | (1L << (LAST - 261)) | (1L << (LEVEL - 261)) | (1L << (LOCAL - 261)) | (1L << (LOCK_ESCALATION - 261)) | (1L << (LOGIN - 261)) | (1L << (LOOP - 261)) | (1L << (MARK - 261)) | (1L << (MAX - 261)) | (1L << (MAXDOP - 261)) | (1L << (MAXRECURSION - 261)) | (1L << (MIN - 261)) | (1L << (MODIFY - 261)) | (1L << (NAME - 261)) | (1L << (NEXT - 261)) | (1L << (NOCOUNT - 261)) | (1L << (NOEXPAND - 261)) | (1L << (NORECOMPUTE - 261)) | (1L << (NTILE - 261)) | (1L << (NUMBER - 261)) | (1L << (OFFSET - 261)) | (1L << (ONLINE - 261)))) != 0) || ((((_la - 325)) & ~0x3f) == 0 && ((1L << (_la - 325)) & ((1L << (ONLY - 325)) | (1L << (OPTIMISTIC - 325)) | (1L << (OPTIMIZE - 325)) | (1L << (OUT - 325)) | (1L << (OUTPUT - 325)) | (1L << (OWNER - 325)) | (1L << (PARAMETERIZATION - 325)) | (1L << (PARTITION - 325)) | (1L << (PATH - 325)) | (1L << (PRECEDING - 325)) | (1L << (PRIOR - 325)) | (1L << (PRIVILEGES - 325)) | (1L << (RANGE - 325)) | (1L << (RANK - 325)) | (1L << (READONLY - 325)) | (1L << (READ_ONLY - 325)) | (1L << (RECOMPILE - 325)) | (1L << (RELATIVE - 325)) | (1L << (REMOTE - 325)) | (1L << (REPEATABLE - 325)) | (1L << (ROBUST - 325)) | (1L << (ROOT - 325)) | (1L << (ROW - 325)) | (1L << (ROWGUID - 325)) | (1L << (ROWS - 325)) | (1L << (ROW_NUMBER - 325)) | (1L << (SAMPLE - 325)) | (1L << (SCHEMABINDING - 325)) | (1L << (SCROLL - 325)) | (1L << (SCROLL_LOCKS - 325)) | (1L << (SELF - 325)) | (1L << (SERIALIZABLE - 325)) | (1L << (SIMPLE - 325)) | (1L << (SNAPSHOT - 325)) | (1L << (SPATIAL_WINDOW_MAX_CELLS - 325)) | (1L << (STATIC - 325)) | (1L << (STATS_STREAM - 325)) | (1L << (STDEV - 325)) | (1L << (STDEVP - 325)) | (1L << (SUM - 325)) | (1L << (TEXTIMAGE_ON - 325)) | (1L << (THROW - 325)) | (1L << (TIES - 325)) | (1L << (TIME - 325)) | (1L << (TRY - 325)) | (1L << (TYPE - 325)))) != 0) || ((((_la - 389)) & ~0x3f) == 0 && ((1L << (_la - 389)) & ((1L << (TYPE_WARNING - 389)) | (1L << (UNBOUNDED - 389)) | (1L << (UNCOMMITTED - 389)) | (1L << (UNKNOWN - 389)) | (1L << (USING - 389)) | (1L << (VAR - 389)) | (1L << (VARP - 389)) | (1L << (VIEWS - 389)) | (1L << (VIEW_METADATA - 389)) | (1L << (WORK - 389)) | (1L << (XML - 389)) | (1L << (XMLNAMESPACES - 389)) | (1L << (DOUBLE_QUOTE_ID - 389)) | (1L << (LEFT_QUOTE_ID - 389)) | (1L << (ID - 389)))) != 0)) {
 				{
@@ -2219,11 +2293,19 @@ public class mysql_ddlParser extends Parser {
 	public static class Table_foreign_key_defContext extends ParserRuleContext {
 		public TerminalNode FOREIGN() { return getToken(mysql_ddlParser.FOREIGN, 0); }
 		public TerminalNode KEY() { return getToken(mysql_ddlParser.KEY, 0); }
+		public List<TerminalNode> LR_BRACKET() { return getTokens(mysql_ddlParser.LR_BRACKET); }
+		public TerminalNode LR_BRACKET(int i) {
+			return getToken(mysql_ddlParser.LR_BRACKET, i);
+		}
 		public List<Column_name_listContext> column_name_list() {
 			return getRuleContexts(Column_name_listContext.class);
 		}
 		public Column_name_listContext column_name_list(int i) {
 			return getRuleContext(Column_name_listContext.class,i);
+		}
+		public List<TerminalNode> RR_BRACKET() { return getTokens(mysql_ddlParser.RR_BRACKET); }
+		public TerminalNode RR_BRACKET(int i) {
+			return getToken(mysql_ddlParser.RR_BRACKET, i);
 		}
 		public TerminalNode REFERENCES() { return getToken(mysql_ddlParser.REFERENCES, 0); }
 		public List<IdContext> id() {
@@ -2272,6 +2354,7 @@ public class mysql_ddlParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(328);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==CONSTRAINT) {
 				{
@@ -2378,6 +2461,7 @@ public class mysql_ddlParser extends Parser {
 			setState(348);
 			match(DELETE);
 			setState(353);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case CASCADE:
 				{
@@ -2451,6 +2535,7 @@ public class mysql_ddlParser extends Parser {
 			setState(356);
 			match(UPDATE);
 			setState(360);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case RESTRICT:
 				{
@@ -2492,6 +2577,10 @@ public class mysql_ddlParser extends Parser {
 		}
 		public IdContext id(int i) {
 			return getRuleContext(IdContext.class,i);
+		}
+		public List<TerminalNode> DOT() { return getTokens(mysql_ddlParser.DOT); }
+		public TerminalNode DOT(int i) {
+			return getToken(mysql_ddlParser.DOT, i);
 		}
 		public Full_table_nameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -2545,6 +2634,7 @@ public class mysql_ddlParser extends Parser {
 				setState(370);
 				match(DOT);
 				setState(372);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==FORCESEEK || ((((_la - 197)) & ~0x3f) == 0 && ((1L << (_la - 197)) & ((1L << (ABSOLUTE - 197)) | (1L << (APPLY - 197)) | (1L << (AUTO - 197)) | (1L << (AVG - 197)) | (1L << (BASE64 - 197)) | (1L << (CALLER - 197)) | (1L << (CAST - 197)) | (1L << (CATCH - 197)) | (1L << (CHECKSUM_AGG - 197)) | (1L << (COMMITTED - 197)) | (1L << (CONCAT - 197)) | (1L << (CONTROL - 197)) | (1L << (COOKIE - 197)) | (1L << (COUNT - 197)) | (1L << (COUNT_BIG - 197)) | (1L << (DELAY - 197)) | (1L << (DELETED - 197)) | (1L << (DENSE_RANK - 197)) | (1L << (DISABLE - 197)) | (1L << (DYNAMIC - 197)) | (1L << (ENCRYPTION - 197)) | (1L << (EXPAND - 197)) | (1L << (FAST - 197)))) != 0) || ((((_la - 261)) & ~0x3f) == 0 && ((1L << (_la - 261)) & ((1L << (FAST_FORWARD - 261)) | (1L << (FIRST - 261)) | (1L << (FOLLOWING - 261)) | (1L << (FORCE - 261)) | (1L << (FORCED - 261)) | (1L << (FORWARD_ONLY - 261)) | (1L << (FULLSCAN - 261)) | (1L << (GLOBAL - 261)) | (1L << (GO - 261)) | (1L << (GROUPING - 261)) | (1L << (GROUPING_ID - 261)) | (1L << (HASH - 261)) | (1L << (IGNORE_NONCLUSTERED_COLUMNSTORE_INDEX - 261)) | (1L << (IMPERSONATE - 261)) | (1L << (INSENSITIVE - 261)) | (1L << (INSERTED - 261)) | (1L << (ISOLATION - 261)) | (1L << (KEEP - 261)) | (1L << (KEEPFIXED - 261)) | (1L << (KEYSET - 261)) | (1L << (LAST - 261)) | (1L << (LEVEL - 261)) | (1L << (LOCAL - 261)) | (1L << (LOCK_ESCALATION - 261)) | (1L << (LOGIN - 261)) | (1L << (LOOP - 261)) | (1L << (MARK - 261)) | (1L << (MAX - 261)) | (1L << (MAXDOP - 261)) | (1L << (MAXRECURSION - 261)) | (1L << (MIN - 261)) | (1L << (MODIFY - 261)) | (1L << (NAME - 261)) | (1L << (NEXT - 261)) | (1L << (NOCOUNT - 261)) | (1L << (NOEXPAND - 261)) | (1L << (NORECOMPUTE - 261)) | (1L << (NTILE - 261)) | (1L << (NUMBER - 261)) | (1L << (OFFSET - 261)) | (1L << (ONLINE - 261)))) != 0) || ((((_la - 325)) & ~0x3f) == 0 && ((1L << (_la - 325)) & ((1L << (ONLY - 325)) | (1L << (OPTIMISTIC - 325)) | (1L << (OPTIMIZE - 325)) | (1L << (OUT - 325)) | (1L << (OUTPUT - 325)) | (1L << (OWNER - 325)) | (1L << (PARAMETERIZATION - 325)) | (1L << (PARTITION - 325)) | (1L << (PATH - 325)) | (1L << (PRECEDING - 325)) | (1L << (PRIOR - 325)) | (1L << (PRIVILEGES - 325)) | (1L << (RANGE - 325)) | (1L << (RANK - 325)) | (1L << (READONLY - 325)) | (1L << (READ_ONLY - 325)) | (1L << (RECOMPILE - 325)) | (1L << (RELATIVE - 325)) | (1L << (REMOTE - 325)) | (1L << (REPEATABLE - 325)) | (1L << (ROBUST - 325)) | (1L << (ROOT - 325)) | (1L << (ROW - 325)) | (1L << (ROWGUID - 325)) | (1L << (ROWS - 325)) | (1L << (ROW_NUMBER - 325)) | (1L << (SAMPLE - 325)) | (1L << (SCHEMABINDING - 325)) | (1L << (SCROLL - 325)) | (1L << (SCROLL_LOCKS - 325)) | (1L << (SELF - 325)) | (1L << (SERIALIZABLE - 325)) | (1L << (SIMPLE - 325)) | (1L << (SNAPSHOT - 325)) | (1L << (SPATIAL_WINDOW_MAX_CELLS - 325)) | (1L << (STATIC - 325)) | (1L << (STATS_STREAM - 325)) | (1L << (STDEV - 325)) | (1L << (STDEVP - 325)) | (1L << (SUM - 325)) | (1L << (TEXTIMAGE_ON - 325)) | (1L << (THROW - 325)) | (1L << (TIES - 325)) | (1L << (TIME - 325)) | (1L << (TRY - 325)) | (1L << (TYPE - 325)))) != 0) || ((((_la - 389)) & ~0x3f) == 0 && ((1L << (_la - 389)) & ((1L << (TYPE_WARNING - 389)) | (1L << (UNBOUNDED - 389)) | (1L << (UNCOMMITTED - 389)) | (1L << (UNKNOWN - 389)) | (1L << (USING - 389)) | (1L << (VAR - 389)) | (1L << (VARP - 389)) | (1L << (VIEWS - 389)) | (1L << (VIEW_METADATA - 389)) | (1L << (WORK - 389)) | (1L << (XML - 389)) | (1L << (XMLNAMESPACES - 389)) | (1L << (DOUBLE_QUOTE_ID - 389)) | (1L << (LEFT_QUOTE_ID - 389)) | (1L << (ID - 389)))) != 0)) {
 					{
@@ -2591,6 +2681,10 @@ public class mysql_ddlParser extends Parser {
 		public IdContext id(int i) {
 			return getRuleContext(IdContext.class,i);
 		}
+		public List<TerminalNode> DOT() { return getTokens(mysql_ddlParser.DOT); }
+		public TerminalNode DOT(int i) {
+			return getToken(mysql_ddlParser.DOT, i);
+		}
 		public Table_nameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -2627,6 +2721,7 @@ public class mysql_ddlParser extends Parser {
 				setState(384);
 				match(DOT);
 				setState(386);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==FORCESEEK || ((((_la - 197)) & ~0x3f) == 0 && ((1L << (_la - 197)) & ((1L << (ABSOLUTE - 197)) | (1L << (APPLY - 197)) | (1L << (AUTO - 197)) | (1L << (AVG - 197)) | (1L << (BASE64 - 197)) | (1L << (CALLER - 197)) | (1L << (CAST - 197)) | (1L << (CATCH - 197)) | (1L << (CHECKSUM_AGG - 197)) | (1L << (COMMITTED - 197)) | (1L << (CONCAT - 197)) | (1L << (CONTROL - 197)) | (1L << (COOKIE - 197)) | (1L << (COUNT - 197)) | (1L << (COUNT_BIG - 197)) | (1L << (DELAY - 197)) | (1L << (DELETED - 197)) | (1L << (DENSE_RANK - 197)) | (1L << (DISABLE - 197)) | (1L << (DYNAMIC - 197)) | (1L << (ENCRYPTION - 197)) | (1L << (EXPAND - 197)) | (1L << (FAST - 197)))) != 0) || ((((_la - 261)) & ~0x3f) == 0 && ((1L << (_la - 261)) & ((1L << (FAST_FORWARD - 261)) | (1L << (FIRST - 261)) | (1L << (FOLLOWING - 261)) | (1L << (FORCE - 261)) | (1L << (FORCED - 261)) | (1L << (FORWARD_ONLY - 261)) | (1L << (FULLSCAN - 261)) | (1L << (GLOBAL - 261)) | (1L << (GO - 261)) | (1L << (GROUPING - 261)) | (1L << (GROUPING_ID - 261)) | (1L << (HASH - 261)) | (1L << (IGNORE_NONCLUSTERED_COLUMNSTORE_INDEX - 261)) | (1L << (IMPERSONATE - 261)) | (1L << (INSENSITIVE - 261)) | (1L << (INSERTED - 261)) | (1L << (ISOLATION - 261)) | (1L << (KEEP - 261)) | (1L << (KEEPFIXED - 261)) | (1L << (KEYSET - 261)) | (1L << (LAST - 261)) | (1L << (LEVEL - 261)) | (1L << (LOCAL - 261)) | (1L << (LOCK_ESCALATION - 261)) | (1L << (LOGIN - 261)) | (1L << (LOOP - 261)) | (1L << (MARK - 261)) | (1L << (MAX - 261)) | (1L << (MAXDOP - 261)) | (1L << (MAXRECURSION - 261)) | (1L << (MIN - 261)) | (1L << (MODIFY - 261)) | (1L << (NAME - 261)) | (1L << (NEXT - 261)) | (1L << (NOCOUNT - 261)) | (1L << (NOEXPAND - 261)) | (1L << (NORECOMPUTE - 261)) | (1L << (NTILE - 261)) | (1L << (NUMBER - 261)) | (1L << (OFFSET - 261)) | (1L << (ONLINE - 261)))) != 0) || ((((_la - 325)) & ~0x3f) == 0 && ((1L << (_la - 325)) & ((1L << (ONLY - 325)) | (1L << (OPTIMISTIC - 325)) | (1L << (OPTIMIZE - 325)) | (1L << (OUT - 325)) | (1L << (OUTPUT - 325)) | (1L << (OWNER - 325)) | (1L << (PARAMETERIZATION - 325)) | (1L << (PARTITION - 325)) | (1L << (PATH - 325)) | (1L << (PRECEDING - 325)) | (1L << (PRIOR - 325)) | (1L << (PRIVILEGES - 325)) | (1L << (RANGE - 325)) | (1L << (RANK - 325)) | (1L << (READONLY - 325)) | (1L << (READ_ONLY - 325)) | (1L << (RECOMPILE - 325)) | (1L << (RELATIVE - 325)) | (1L << (REMOTE - 325)) | (1L << (REPEATABLE - 325)) | (1L << (ROBUST - 325)) | (1L << (ROOT - 325)) | (1L << (ROW - 325)) | (1L << (ROWGUID - 325)) | (1L << (ROWS - 325)) | (1L << (ROW_NUMBER - 325)) | (1L << (SAMPLE - 325)) | (1L << (SCHEMABINDING - 325)) | (1L << (SCROLL - 325)) | (1L << (SCROLL_LOCKS - 325)) | (1L << (SELF - 325)) | (1L << (SERIALIZABLE - 325)) | (1L << (SIMPLE - 325)) | (1L << (SNAPSHOT - 325)) | (1L << (SPATIAL_WINDOW_MAX_CELLS - 325)) | (1L << (STATIC - 325)) | (1L << (STATS_STREAM - 325)) | (1L << (STDEV - 325)) | (1L << (STDEVP - 325)) | (1L << (SUM - 325)) | (1L << (TEXTIMAGE_ON - 325)) | (1L << (THROW - 325)) | (1L << (TIES - 325)) | (1L << (TIME - 325)) | (1L << (TRY - 325)) | (1L << (TYPE - 325)))) != 0) || ((((_la - 389)) & ~0x3f) == 0 && ((1L << (_la - 389)) & ((1L << (TYPE_WARNING - 389)) | (1L << (UNBOUNDED - 389)) | (1L << (UNCOMMITTED - 389)) | (1L << (UNKNOWN - 389)) | (1L << (USING - 389)) | (1L << (VAR - 389)) | (1L << (VARP - 389)) | (1L << (VIEWS - 389)) | (1L << (VIEW_METADATA - 389)) | (1L << (WORK - 389)) | (1L << (XML - 389)) | (1L << (XMLNAMESPACES - 389)) | (1L << (DOUBLE_QUOTE_ID - 389)) | (1L << (LEFT_QUOTE_ID - 389)) | (1L << (ID - 389)))) != 0)) {
 					{
@@ -2672,6 +2767,7 @@ public class mysql_ddlParser extends Parser {
 		public IdContext id(int i) {
 			return getRuleContext(IdContext.class,i);
 		}
+		public TerminalNode DOT() { return getToken(mysql_ddlParser.DOT, 0); }
 		public Simple_nameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -2734,6 +2830,10 @@ public class mysql_ddlParser extends Parser {
 		public IdContext id(int i) {
 			return getRuleContext(IdContext.class,i);
 		}
+		public List<TerminalNode> DOT() { return getTokens(mysql_ddlParser.DOT); }
+		public TerminalNode DOT(int i) {
+			return getToken(mysql_ddlParser.DOT, i);
+		}
 		public Func_proc_nameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -2770,6 +2870,7 @@ public class mysql_ddlParser extends Parser {
 				setState(405);
 				match(DOT);
 				setState(407);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==FORCESEEK || ((((_la - 197)) & ~0x3f) == 0 && ((1L << (_la - 197)) & ((1L << (ABSOLUTE - 197)) | (1L << (APPLY - 197)) | (1L << (AUTO - 197)) | (1L << (AVG - 197)) | (1L << (BASE64 - 197)) | (1L << (CALLER - 197)) | (1L << (CAST - 197)) | (1L << (CATCH - 197)) | (1L << (CHECKSUM_AGG - 197)) | (1L << (COMMITTED - 197)) | (1L << (CONCAT - 197)) | (1L << (CONTROL - 197)) | (1L << (COOKIE - 197)) | (1L << (COUNT - 197)) | (1L << (COUNT_BIG - 197)) | (1L << (DELAY - 197)) | (1L << (DELETED - 197)) | (1L << (DENSE_RANK - 197)) | (1L << (DISABLE - 197)) | (1L << (DYNAMIC - 197)) | (1L << (ENCRYPTION - 197)) | (1L << (EXPAND - 197)) | (1L << (FAST - 197)))) != 0) || ((((_la - 261)) & ~0x3f) == 0 && ((1L << (_la - 261)) & ((1L << (FAST_FORWARD - 261)) | (1L << (FIRST - 261)) | (1L << (FOLLOWING - 261)) | (1L << (FORCE - 261)) | (1L << (FORCED - 261)) | (1L << (FORWARD_ONLY - 261)) | (1L << (FULLSCAN - 261)) | (1L << (GLOBAL - 261)) | (1L << (GO - 261)) | (1L << (GROUPING - 261)) | (1L << (GROUPING_ID - 261)) | (1L << (HASH - 261)) | (1L << (IGNORE_NONCLUSTERED_COLUMNSTORE_INDEX - 261)) | (1L << (IMPERSONATE - 261)) | (1L << (INSENSITIVE - 261)) | (1L << (INSERTED - 261)) | (1L << (ISOLATION - 261)) | (1L << (KEEP - 261)) | (1L << (KEEPFIXED - 261)) | (1L << (KEYSET - 261)) | (1L << (LAST - 261)) | (1L << (LEVEL - 261)) | (1L << (LOCAL - 261)) | (1L << (LOCK_ESCALATION - 261)) | (1L << (LOGIN - 261)) | (1L << (LOOP - 261)) | (1L << (MARK - 261)) | (1L << (MAX - 261)) | (1L << (MAXDOP - 261)) | (1L << (MAXRECURSION - 261)) | (1L << (MIN - 261)) | (1L << (MODIFY - 261)) | (1L << (NAME - 261)) | (1L << (NEXT - 261)) | (1L << (NOCOUNT - 261)) | (1L << (NOEXPAND - 261)) | (1L << (NORECOMPUTE - 261)) | (1L << (NTILE - 261)) | (1L << (NUMBER - 261)) | (1L << (OFFSET - 261)) | (1L << (ONLINE - 261)))) != 0) || ((((_la - 325)) & ~0x3f) == 0 && ((1L << (_la - 325)) & ((1L << (ONLY - 325)) | (1L << (OPTIMISTIC - 325)) | (1L << (OPTIMIZE - 325)) | (1L << (OUT - 325)) | (1L << (OUTPUT - 325)) | (1L << (OWNER - 325)) | (1L << (PARAMETERIZATION - 325)) | (1L << (PARTITION - 325)) | (1L << (PATH - 325)) | (1L << (PRECEDING - 325)) | (1L << (PRIOR - 325)) | (1L << (PRIVILEGES - 325)) | (1L << (RANGE - 325)) | (1L << (RANK - 325)) | (1L << (READONLY - 325)) | (1L << (READ_ONLY - 325)) | (1L << (RECOMPILE - 325)) | (1L << (RELATIVE - 325)) | (1L << (REMOTE - 325)) | (1L << (REPEATABLE - 325)) | (1L << (ROBUST - 325)) | (1L << (ROOT - 325)) | (1L << (ROW - 325)) | (1L << (ROWGUID - 325)) | (1L << (ROWS - 325)) | (1L << (ROW_NUMBER - 325)) | (1L << (SAMPLE - 325)) | (1L << (SCHEMABINDING - 325)) | (1L << (SCROLL - 325)) | (1L << (SCROLL_LOCKS - 325)) | (1L << (SELF - 325)) | (1L << (SERIALIZABLE - 325)) | (1L << (SIMPLE - 325)) | (1L << (SNAPSHOT - 325)) | (1L << (SPATIAL_WINDOW_MAX_CELLS - 325)) | (1L << (STATIC - 325)) | (1L << (STATS_STREAM - 325)) | (1L << (STDEV - 325)) | (1L << (STDEVP - 325)) | (1L << (SUM - 325)) | (1L << (TEXTIMAGE_ON - 325)) | (1L << (THROW - 325)) | (1L << (TIES - 325)) | (1L << (TIME - 325)) | (1L << (TRY - 325)) | (1L << (TYPE - 325)))) != 0) || ((((_la - 389)) & ~0x3f) == 0 && ((1L << (_la - 389)) & ((1L << (TYPE_WARNING - 389)) | (1L << (UNBOUNDED - 389)) | (1L << (UNCOMMITTED - 389)) | (1L << (UNKNOWN - 389)) | (1L << (USING - 389)) | (1L << (VAR - 389)) | (1L << (VARP - 389)) | (1L << (VIEWS - 389)) | (1L << (VIEW_METADATA - 389)) | (1L << (WORK - 389)) | (1L << (XML - 389)) | (1L << (XMLNAMESPACES - 389)) | (1L << (DOUBLE_QUOTE_ID - 389)) | (1L << (LEFT_QUOTE_ID - 389)) | (1L << (ID - 389)))) != 0)) {
 					{
@@ -2837,6 +2938,7 @@ public class mysql_ddlParser extends Parser {
 		enterRule(_localctx, 60, RULE_ddl_object);
 		try {
 			setState(420);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case FORCESEEK:
 			case ABSOLUTE:
@@ -2999,6 +3101,7 @@ public class mysql_ddlParser extends Parser {
 		public Table_nameContext table_name() {
 			return getRuleContext(Table_nameContext.class,0);
 		}
+		public TerminalNode DOT() { return getToken(mysql_ddlParser.DOT, 0); }
 		public Full_column_nameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -3057,6 +3160,10 @@ public class mysql_ddlParser extends Parser {
 		}
 		public IdContext id(int i) {
 			return getRuleContext(IdContext.class,i);
+		}
+		public List<TerminalNode> COMMA() { return getTokens(mysql_ddlParser.COMMA); }
+		public TerminalNode COMMA(int i) {
+			return getToken(mysql_ddlParser.COMMA, i);
 		}
 		public Column_name_listContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -3122,6 +3229,10 @@ public class mysql_ddlParser extends Parser {
 		public IdContext id(int i) {
 			return getRuleContext(IdContext.class,i);
 		}
+		public List<TerminalNode> COMMA() { return getTokens(mysql_ddlParser.COMMA); }
+		public TerminalNode COMMA(int i) {
+			return getToken(mysql_ddlParser.COMMA, i);
+		}
 		public List<TerminalNode> ASC() { return getTokens(mysql_ddlParser.ASC); }
 		public TerminalNode ASC(int i) {
 			return getToken(mysql_ddlParser.ASC, i);
@@ -3159,6 +3270,7 @@ public class mysql_ddlParser extends Parser {
 			setState(437);
 			id();
 			setState(439);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==ASC || _la==DESC) {
 				{
@@ -3166,7 +3278,10 @@ public class mysql_ddlParser extends Parser {
 				_la = _input.LA(1);
 				if ( !(_la==ASC || _la==DESC) ) {
 				_errHandler.recoverInline(this);
-				} else {
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
 					consume();
 				}
 				}
@@ -3183,6 +3298,7 @@ public class mysql_ddlParser extends Parser {
 				setState(442);
 				id();
 				setState(444);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==ASC || _la==DESC) {
 					{
@@ -3190,7 +3306,10 @@ public class mysql_ddlParser extends Parser {
 					_la = _input.LA(1);
 					if ( !(_la==ASC || _la==DESC) ) {
 					_errHandler.recoverInline(this);
-					} else {
+					}
+					else {
+						if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+						_errHandler.reportMatch(this);
 						consume();
 					}
 					}
@@ -3244,6 +3363,7 @@ public class mysql_ddlParser extends Parser {
 		enterRule(_localctx, 68, RULE_cursor_name);
 		try {
 			setState(453);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case FORCESEEK:
 			case ABSOLUTE:
@@ -3432,7 +3552,10 @@ public class mysql_ddlParser extends Parser {
 			_la = _input.LA(1);
 			if ( !(_la==OFF || _la==ON) ) {
 			_errHandler.recoverInline(this);
-			} else {
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
 				consume();
 			}
 			}
@@ -3481,7 +3604,10 @@ public class mysql_ddlParser extends Parser {
 			_la = _input.LA(1);
 			if ( !(_la==CLUSTERED || _la==NONCLUSTERED) ) {
 			_errHandler.recoverInline(this);
-			} else {
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
 				consume();
 			}
 			}
@@ -3527,6 +3653,7 @@ public class mysql_ddlParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(460);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==NOT) {
 				{
@@ -3582,6 +3709,7 @@ public class mysql_ddlParser extends Parser {
 		enterRule(_localctx, 76, RULE_scalar_function_name);
 		try {
 			setState(469);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case FORCESEEK:
 			case ABSOLUTE:
@@ -3763,11 +3891,14 @@ public class mysql_ddlParser extends Parser {
 			return getRuleContext(IdContext.class,0);
 		}
 		public TerminalNode IDENTITY() { return getToken(mysql_ddlParser.IDENTITY, 0); }
+		public TerminalNode LR_BRACKET() { return getToken(mysql_ddlParser.LR_BRACKET, 0); }
+		public TerminalNode RR_BRACKET() { return getToken(mysql_ddlParser.RR_BRACKET, 0); }
 		public List<TerminalNode> DECIMAL_LITERAL() { return getTokens(mysql_ddlParser.DECIMAL_LITERAL); }
 		public TerminalNode DECIMAL_LITERAL(int i) {
 			return getToken(mysql_ddlParser.DECIMAL_LITERAL, i);
 		}
 		public TerminalNode MAX() { return getToken(mysql_ddlParser.MAX, 0); }
+		public TerminalNode COMMA() { return getToken(mysql_ddlParser.COMMA, 0); }
 		public Ms_data_typeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -3797,6 +3928,7 @@ public class mysql_ddlParser extends Parser {
 			setState(471);
 			id();
 			setState(473);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==IDENTITY) {
 				{
@@ -3806,6 +3938,7 @@ public class mysql_ddlParser extends Parser {
 			}
 
 			setState(482);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (_la==LR_BRACKET) {
 				{
@@ -3815,10 +3948,14 @@ public class mysql_ddlParser extends Parser {
 				_la = _input.LA(1);
 				if ( !(_la==MAX || _la==DECIMAL_LITERAL) ) {
 				_errHandler.recoverInline(this);
-				} else {
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
 					consume();
 				}
 				setState(479);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==COMMA) {
 					{
@@ -3854,6 +3991,8 @@ public class mysql_ddlParser extends Parser {
 			return getToken(mysql_ddlParser.DECIMAL_LITERAL, i);
 		}
 		public TerminalNode TINYINT() { return getToken(mysql_ddlParser.TINYINT, 0); }
+		public TerminalNode LR_BRACKET() { return getToken(mysql_ddlParser.LR_BRACKET, 0); }
+		public TerminalNode RR_BRACKET() { return getToken(mysql_ddlParser.RR_BRACKET, 0); }
 		public TerminalNode UNSIGNED() { return getToken(mysql_ddlParser.UNSIGNED, 0); }
 		public TerminalNode ZEROFILL() { return getToken(mysql_ddlParser.ZEROFILL, 0); }
 		public TerminalNode SMALLINT() { return getToken(mysql_ddlParser.SMALLINT, 0); }
@@ -3862,6 +4001,7 @@ public class mysql_ddlParser extends Parser {
 		public TerminalNode INTEGER() { return getToken(mysql_ddlParser.INTEGER, 0); }
 		public TerminalNode BIGINT() { return getToken(mysql_ddlParser.BIGINT, 0); }
 		public TerminalNode REAL() { return getToken(mysql_ddlParser.REAL, 0); }
+		public TerminalNode COMMA() { return getToken(mysql_ddlParser.COMMA, 0); }
 		public TerminalNode DOUBLE() { return getToken(mysql_ddlParser.DOUBLE, 0); }
 		public TerminalNode FLOAT() { return getToken(mysql_ddlParser.FLOAT, 0); }
 		public TerminalNode DECIMAL() { return getToken(mysql_ddlParser.DECIMAL, 0); }
@@ -3923,6 +4063,7 @@ public class mysql_ddlParser extends Parser {
 		int _la;
 		try {
 			setState(796);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case BIT:
 				enterOuterAlt(_localctx, 1);
@@ -3930,6 +4071,7 @@ public class mysql_ddlParser extends Parser {
 				setState(484);
 				match(BIT);
 				setState(486);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==DECIMAL_LITERAL) {
 					{
@@ -3946,6 +4088,7 @@ public class mysql_ddlParser extends Parser {
 				setState(488);
 				match(TINYINT);
 				setState(492);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LR_BRACKET) {
 					{
@@ -3959,6 +4102,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(495);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==UNSIGNED) {
 					{
@@ -3968,6 +4112,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(498);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==ZEROFILL) {
 					{
@@ -3984,6 +4129,7 @@ public class mysql_ddlParser extends Parser {
 				setState(500);
 				match(SMALLINT);
 				setState(504);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LR_BRACKET) {
 					{
@@ -3997,6 +4143,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(507);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==UNSIGNED) {
 					{
@@ -4006,6 +4153,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(510);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==ZEROFILL) {
 					{
@@ -4022,6 +4170,7 @@ public class mysql_ddlParser extends Parser {
 				setState(512);
 				match(MEDIUMINT);
 				setState(516);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LR_BRACKET) {
 					{
@@ -4035,6 +4184,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(519);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==UNSIGNED) {
 					{
@@ -4044,6 +4194,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(522);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==ZEROFILL) {
 					{
@@ -4060,6 +4211,7 @@ public class mysql_ddlParser extends Parser {
 				setState(524);
 				match(INT);
 				setState(528);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LR_BRACKET) {
 					{
@@ -4073,6 +4225,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(531);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==UNSIGNED) {
 					{
@@ -4082,6 +4235,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(534);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==ZEROFILL) {
 					{
@@ -4098,6 +4252,7 @@ public class mysql_ddlParser extends Parser {
 				setState(536);
 				match(INTEGER);
 				setState(540);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LR_BRACKET) {
 					{
@@ -4111,6 +4266,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(543);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==UNSIGNED) {
 					{
@@ -4120,6 +4276,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(546);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==ZEROFILL) {
 					{
@@ -4136,6 +4293,7 @@ public class mysql_ddlParser extends Parser {
 				setState(548);
 				match(BIGINT);
 				setState(552);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LR_BRACKET) {
 					{
@@ -4149,6 +4307,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(555);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==UNSIGNED) {
 					{
@@ -4158,6 +4317,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(558);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==ZEROFILL) {
 					{
@@ -4174,6 +4334,7 @@ public class mysql_ddlParser extends Parser {
 				setState(560);
 				match(REAL);
 				setState(566);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LR_BRACKET) {
 					{
@@ -4191,6 +4352,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(569);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==UNSIGNED) {
 					{
@@ -4200,6 +4362,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(572);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==ZEROFILL) {
 					{
@@ -4216,6 +4379,7 @@ public class mysql_ddlParser extends Parser {
 				setState(574);
 				match(DOUBLE);
 				setState(580);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LR_BRACKET) {
 					{
@@ -4233,6 +4397,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(583);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==UNSIGNED) {
 					{
@@ -4242,6 +4407,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(586);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==ZEROFILL) {
 					{
@@ -4258,6 +4424,7 @@ public class mysql_ddlParser extends Parser {
 				setState(588);
 				match(FLOAT);
 				setState(594);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LR_BRACKET) {
 					{
@@ -4275,6 +4442,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(597);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==UNSIGNED) {
 					{
@@ -4284,6 +4452,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(600);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==ZEROFILL) {
 					{
@@ -4300,6 +4469,7 @@ public class mysql_ddlParser extends Parser {
 				setState(602);
 				match(DECIMAL);
 				setState(610);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LR_BRACKET) {
 					{
@@ -4308,6 +4478,7 @@ public class mysql_ddlParser extends Parser {
 					setState(604);
 					match(DECIMAL_LITERAL);
 					setState(607);
+					_errHandler.sync(this);
 					_la = _input.LA(1);
 					if (_la==COMMA) {
 						{
@@ -4324,6 +4495,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(613);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==UNSIGNED) {
 					{
@@ -4333,6 +4505,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(616);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==ZEROFILL) {
 					{
@@ -4349,6 +4522,7 @@ public class mysql_ddlParser extends Parser {
 				setState(618);
 				match(NUMERIC);
 				setState(626);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LR_BRACKET) {
 					{
@@ -4357,6 +4531,7 @@ public class mysql_ddlParser extends Parser {
 					setState(620);
 					match(DECIMAL_LITERAL);
 					setState(623);
+					_errHandler.sync(this);
 					_la = _input.LA(1);
 					if (_la==COMMA) {
 						{
@@ -4373,6 +4548,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(629);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==UNSIGNED) {
 					{
@@ -4382,6 +4558,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(632);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==ZEROFILL) {
 					{
@@ -4405,6 +4582,7 @@ public class mysql_ddlParser extends Parser {
 				setState(635);
 				match(TIME);
 				setState(639);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LR_BRACKET) {
 					{
@@ -4425,6 +4603,7 @@ public class mysql_ddlParser extends Parser {
 				setState(641);
 				match(TIMESTAMP);
 				setState(645);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LR_BRACKET) {
 					{
@@ -4445,6 +4624,7 @@ public class mysql_ddlParser extends Parser {
 				setState(647);
 				match(DATETIME);
 				setState(651);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LR_BRACKET) {
 					{
@@ -4472,6 +4652,7 @@ public class mysql_ddlParser extends Parser {
 				setState(654);
 				match(CHAR);
 				setState(658);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LR_BRACKET) {
 					{
@@ -4485,6 +4666,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(661);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==BINARY) {
 					{
@@ -4494,6 +4676,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(666);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==CHARACTER) {
 					{
@@ -4507,6 +4690,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(670);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==COLLATE) {
 					{
@@ -4525,6 +4709,7 @@ public class mysql_ddlParser extends Parser {
 				setState(672);
 				match(VARCHAR);
 				setState(676);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LR_BRACKET) {
 					{
@@ -4538,6 +4723,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(679);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==BINARY) {
 					{
@@ -4547,6 +4733,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(684);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==CHARACTER) {
 					{
@@ -4560,6 +4747,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(688);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==COLLATE) {
 					{
@@ -4578,6 +4766,7 @@ public class mysql_ddlParser extends Parser {
 				setState(690);
 				match(BINARY);
 				setState(694);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LR_BRACKET) {
 					{
@@ -4598,6 +4787,7 @@ public class mysql_ddlParser extends Parser {
 				setState(696);
 				match(VARBINARY);
 				setState(700);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==LR_BRACKET) {
 					{
@@ -4653,6 +4843,7 @@ public class mysql_ddlParser extends Parser {
 				setState(707);
 				match(TINYTEXT);
 				setState(709);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==BINARY) {
 					{
@@ -4662,6 +4853,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(714);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==CHARACTER) {
 					{
@@ -4675,6 +4867,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(718);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==COLLATE) {
 					{
@@ -4693,6 +4886,7 @@ public class mysql_ddlParser extends Parser {
 				setState(720);
 				match(TEXT);
 				setState(722);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==BINARY) {
 					{
@@ -4702,6 +4896,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(727);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==CHARACTER) {
 					{
@@ -4715,6 +4910,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(731);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==COLLATE) {
 					{
@@ -4733,6 +4929,7 @@ public class mysql_ddlParser extends Parser {
 				setState(733);
 				match(MEDIUMTEXT);
 				setState(735);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==BINARY) {
 					{
@@ -4742,6 +4939,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(740);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==CHARACTER) {
 					{
@@ -4755,6 +4953,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(744);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==COLLATE) {
 					{
@@ -4773,6 +4972,7 @@ public class mysql_ddlParser extends Parser {
 				setState(746);
 				match(LONGTEXT);
 				setState(748);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==BINARY) {
 					{
@@ -4782,6 +4982,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(753);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==CHARACTER) {
 					{
@@ -4795,6 +4996,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(757);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==COLLATE) {
 					{
@@ -4818,6 +5020,7 @@ public class mysql_ddlParser extends Parser {
 				setState(761);
 				id();
 				setState(764);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==COMMA) {
 					{
@@ -4832,6 +5035,7 @@ public class mysql_ddlParser extends Parser {
 				match(RR_BRACKET);
 				}
 				setState(771);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==CHARACTER) {
 					{
@@ -4845,6 +5049,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(775);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==COLLATE) {
 					{
@@ -4868,6 +5073,7 @@ public class mysql_ddlParser extends Parser {
 				setState(779);
 				id();
 				setState(782);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==COMMA) {
 					{
@@ -4882,6 +5088,7 @@ public class mysql_ddlParser extends Parser {
 				match(RR_BRACKET);
 				}
 				setState(789);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==CHARACTER) {
 					{
@@ -4895,6 +5102,7 @@ public class mysql_ddlParser extends Parser {
 				}
 
 				setState(793);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==COLLATE) {
 					{
@@ -4958,6 +5166,7 @@ public class mysql_ddlParser extends Parser {
 		enterRule(_localctx, 82, RULE_default_value);
 		try {
 			setState(800);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case NULL:
 				enterOuterAlt(_localctx, 1);
@@ -5005,6 +5214,7 @@ public class mysql_ddlParser extends Parser {
 		}
 		public TerminalNode REAL_LITERAL() { return getToken(mysql_ddlParser.REAL_LITERAL, 0); }
 		public TerminalNode FLOAT_LITERAL() { return getToken(mysql_ddlParser.FLOAT_LITERAL, 0); }
+		public TerminalNode DOLLAR() { return getToken(mysql_ddlParser.DOLLAR, 0); }
 		public ConstantContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -5050,6 +5260,7 @@ public class mysql_ddlParser extends Parser {
 				enterOuterAlt(_localctx, 3);
 				{
 				setState(805);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==PLUS || _la==MINUS) {
 					{
@@ -5066,6 +5277,7 @@ public class mysql_ddlParser extends Parser {
 				enterOuterAlt(_localctx, 4);
 				{
 				setState(809);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==PLUS || _la==MINUS) {
 					{
@@ -5078,7 +5290,10 @@ public class mysql_ddlParser extends Parser {
 				_la = _input.LA(1);
 				if ( !(_la==FLOAT_LITERAL || _la==REAL_LITERAL) ) {
 				_errHandler.recoverInline(this);
-				} else {
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
 					consume();
 				}
 				}
@@ -5087,6 +5302,7 @@ public class mysql_ddlParser extends Parser {
 				enterOuterAlt(_localctx, 5);
 				{
 				setState(813);
+				_errHandler.sync(this);
 				_la = _input.LA(1);
 				if (_la==PLUS || _la==MINUS) {
 					{
@@ -5101,7 +5317,10 @@ public class mysql_ddlParser extends Parser {
 				_la = _input.LA(1);
 				if ( !(_la==DECIMAL_LITERAL || _la==FLOAT_LITERAL) ) {
 				_errHandler.recoverInline(this);
-				} else {
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
 					consume();
 				}
 				}
@@ -5120,6 +5339,8 @@ public class mysql_ddlParser extends Parser {
 	}
 
 	public static class SignContext extends ParserRuleContext {
+		public TerminalNode PLUS() { return getToken(mysql_ddlParser.PLUS, 0); }
+		public TerminalNode MINUS() { return getToken(mysql_ddlParser.MINUS, 0); }
 		public SignContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -5150,7 +5371,10 @@ public class mysql_ddlParser extends Parser {
 			_la = _input.LA(1);
 			if ( !(_la==PLUS || _la==MINUS) ) {
 			_errHandler.recoverInline(this);
-			} else {
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
 				consume();
 			}
 			}
@@ -5196,6 +5420,7 @@ public class mysql_ddlParser extends Parser {
 		enterRule(_localctx, 88, RULE_id);
 		try {
 			setState(824);
+			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case FORCESEEK:
 			case ABSOLUTE:
@@ -5511,7 +5736,10 @@ public class mysql_ddlParser extends Parser {
 			_la = _input.LA(1);
 			if ( !(_la==FORCESEEK || ((((_la - 197)) & ~0x3f) == 0 && ((1L << (_la - 197)) & ((1L << (ABSOLUTE - 197)) | (1L << (APPLY - 197)) | (1L << (AUTO - 197)) | (1L << (AVG - 197)) | (1L << (BASE64 - 197)) | (1L << (CALLER - 197)) | (1L << (CAST - 197)) | (1L << (CATCH - 197)) | (1L << (CHECKSUM_AGG - 197)) | (1L << (COMMITTED - 197)) | (1L << (CONCAT - 197)) | (1L << (CONTROL - 197)) | (1L << (COOKIE - 197)) | (1L << (COUNT - 197)) | (1L << (COUNT_BIG - 197)) | (1L << (DELAY - 197)) | (1L << (DELETED - 197)) | (1L << (DENSE_RANK - 197)) | (1L << (DISABLE - 197)) | (1L << (DYNAMIC - 197)) | (1L << (ENCRYPTION - 197)) | (1L << (EXPAND - 197)) | (1L << (FAST - 197)))) != 0) || ((((_la - 261)) & ~0x3f) == 0 && ((1L << (_la - 261)) & ((1L << (FAST_FORWARD - 261)) | (1L << (FIRST - 261)) | (1L << (FOLLOWING - 261)) | (1L << (FORCE - 261)) | (1L << (FORCED - 261)) | (1L << (FORWARD_ONLY - 261)) | (1L << (FULLSCAN - 261)) | (1L << (GLOBAL - 261)) | (1L << (GO - 261)) | (1L << (GROUPING - 261)) | (1L << (GROUPING_ID - 261)) | (1L << (HASH - 261)) | (1L << (IGNORE_NONCLUSTERED_COLUMNSTORE_INDEX - 261)) | (1L << (IMPERSONATE - 261)) | (1L << (INSENSITIVE - 261)) | (1L << (INSERTED - 261)) | (1L << (ISOLATION - 261)) | (1L << (KEEP - 261)) | (1L << (KEEPFIXED - 261)) | (1L << (KEYSET - 261)) | (1L << (LAST - 261)) | (1L << (LEVEL - 261)) | (1L << (LOCAL - 261)) | (1L << (LOCK_ESCALATION - 261)) | (1L << (LOGIN - 261)) | (1L << (LOOP - 261)) | (1L << (MARK - 261)) | (1L << (MAX - 261)) | (1L << (MAXDOP - 261)) | (1L << (MAXRECURSION - 261)) | (1L << (MIN - 261)) | (1L << (MODIFY - 261)) | (1L << (NAME - 261)) | (1L << (NEXT - 261)) | (1L << (NOCOUNT - 261)) | (1L << (NOEXPAND - 261)) | (1L << (NORECOMPUTE - 261)) | (1L << (NTILE - 261)) | (1L << (NUMBER - 261)) | (1L << (OFFSET - 261)) | (1L << (ONLINE - 261)))) != 0) || ((((_la - 325)) & ~0x3f) == 0 && ((1L << (_la - 325)) & ((1L << (ONLY - 325)) | (1L << (OPTIMISTIC - 325)) | (1L << (OPTIMIZE - 325)) | (1L << (OUT - 325)) | (1L << (OUTPUT - 325)) | (1L << (OWNER - 325)) | (1L << (PARAMETERIZATION - 325)) | (1L << (PARTITION - 325)) | (1L << (PATH - 325)) | (1L << (PRECEDING - 325)) | (1L << (PRIOR - 325)) | (1L << (PRIVILEGES - 325)) | (1L << (RANGE - 325)) | (1L << (RANK - 325)) | (1L << (READONLY - 325)) | (1L << (READ_ONLY - 325)) | (1L << (RECOMPILE - 325)) | (1L << (RELATIVE - 325)) | (1L << (REMOTE - 325)) | (1L << (REPEATABLE - 325)) | (1L << (ROBUST - 325)) | (1L << (ROOT - 325)) | (1L << (ROW - 325)) | (1L << (ROWGUID - 325)) | (1L << (ROWS - 325)) | (1L << (ROW_NUMBER - 325)) | (1L << (SAMPLE - 325)) | (1L << (SCHEMABINDING - 325)) | (1L << (SCROLL - 325)) | (1L << (SCROLL_LOCKS - 325)) | (1L << (SELF - 325)) | (1L << (SERIALIZABLE - 325)) | (1L << (SIMPLE - 325)) | (1L << (SNAPSHOT - 325)) | (1L << (SPATIAL_WINDOW_MAX_CELLS - 325)) | (1L << (STATIC - 325)) | (1L << (STATS_STREAM - 325)) | (1L << (STDEV - 325)) | (1L << (STDEVP - 325)) | (1L << (SUM - 325)) | (1L << (TEXTIMAGE_ON - 325)) | (1L << (THROW - 325)) | (1L << (TIES - 325)) | (1L << (TIME - 325)) | (1L << (TRY - 325)) | (1L << (TYPE - 325)))) != 0) || ((((_la - 389)) & ~0x3f) == 0 && ((1L << (_la - 389)) & ((1L << (TYPE_WARNING - 389)) | (1L << (UNBOUNDED - 389)) | (1L << (UNCOMMITTED - 389)) | (1L << (UNKNOWN - 389)) | (1L << (USING - 389)) | (1L << (VAR - 389)) | (1L << (VARP - 389)) | (1L << (VIEWS - 389)) | (1L << (VIEW_METADATA - 389)) | (1L << (WORK - 389)) | (1L << (XML - 389)) | (1L << (XMLNAMESPACES - 389)) | (1L << (ID - 389)))) != 0)) ) {
 			_errHandler.recoverInline(this);
-			} else {
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
 				consume();
 			}
 			}
@@ -5528,6 +5756,10 @@ public class mysql_ddlParser extends Parser {
 	}
 
 	public static class Comparison_operatorContext extends ParserRuleContext {
+		public TerminalNode EQUAL() { return getToken(mysql_ddlParser.EQUAL, 0); }
+		public TerminalNode GREATER() { return getToken(mysql_ddlParser.GREATER, 0); }
+		public TerminalNode LESS() { return getToken(mysql_ddlParser.LESS, 0); }
+		public TerminalNode EXCLAMATION() { return getToken(mysql_ddlParser.EXCLAMATION, 0); }
 		public Comparison_operatorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -5643,6 +5875,14 @@ public class mysql_ddlParser extends Parser {
 	}
 
 	public static class Assignment_operatorContext extends ParserRuleContext {
+		public TerminalNode PLUS_ASSIGN() { return getToken(mysql_ddlParser.PLUS_ASSIGN, 0); }
+		public TerminalNode MINUS_ASSIGN() { return getToken(mysql_ddlParser.MINUS_ASSIGN, 0); }
+		public TerminalNode MULT_ASSIGN() { return getToken(mysql_ddlParser.MULT_ASSIGN, 0); }
+		public TerminalNode DIV_ASSIGN() { return getToken(mysql_ddlParser.DIV_ASSIGN, 0); }
+		public TerminalNode MOD_ASSIGN() { return getToken(mysql_ddlParser.MOD_ASSIGN, 0); }
+		public TerminalNode AND_ASSIGN() { return getToken(mysql_ddlParser.AND_ASSIGN, 0); }
+		public TerminalNode XOR_ASSIGN() { return getToken(mysql_ddlParser.XOR_ASSIGN, 0); }
+		public TerminalNode OR_ASSIGN() { return getToken(mysql_ddlParser.OR_ASSIGN, 0); }
 		public Assignment_operatorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -5673,7 +5913,10 @@ public class mysql_ddlParser extends Parser {
 			_la = _input.LA(1);
 			if ( !(((((_la - 453)) & ~0x3f) == 0 && ((1L << (_la - 453)) & ((1L << (PLUS_ASSIGN - 453)) | (1L << (MINUS_ASSIGN - 453)) | (1L << (MULT_ASSIGN - 453)) | (1L << (DIV_ASSIGN - 453)) | (1L << (MOD_ASSIGN - 453)) | (1L << (AND_ASSIGN - 453)) | (1L << (XOR_ASSIGN - 453)) | (1L << (OR_ASSIGN - 453)))) != 0)) ) {
 			_errHandler.recoverInline(this);
-			} else {
+			}
+			else {
+				if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+				_errHandler.reportMatch(this);
 				consume();
 			}
 			}
@@ -5695,6 +5938,7 @@ public class mysql_ddlParser extends Parser {
 		public TerminalNode MB() { return getToken(mysql_ddlParser.MB, 0); }
 		public TerminalNode GB() { return getToken(mysql_ddlParser.GB, 0); }
 		public TerminalNode TB() { return getToken(mysql_ddlParser.TB, 0); }
+		public TerminalNode MODULE() { return getToken(mysql_ddlParser.MODULE, 0); }
 		public File_sizeContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -5724,6 +5968,7 @@ public class mysql_ddlParser extends Parser {
 			setState(847);
 			match(DECIMAL_LITERAL);
 			setState(849);
+			_errHandler.sync(this);
 			_la = _input.LA(1);
 			if (((((_la - 271)) & ~0x3f) == 0 && ((1L << (_la - 271)) & ((1L << (GB - 271)) | (1L << (KB - 271)) | (1L << (MB - 271)))) != 0) || _la==TB || _la==MODULE) {
 				{
@@ -5731,7 +5976,10 @@ public class mysql_ddlParser extends Parser {
 				_la = _input.LA(1);
 				if ( !(((((_la - 271)) & ~0x3f) == 0 && ((1L << (_la - 271)) & ((1L << (GB - 271)) | (1L << (KB - 271)) | (1L << (MB - 271)))) != 0) || _la==TB || _la==MODULE) ) {
 				_errHandler.recoverInline(this);
-				} else {
+				}
+				else {
+					if ( _input.LA(1)==Token.EOF ) matchedEOF = true;
+					_errHandler.reportMatch(this);
 					consume();
 				}
 				}
@@ -5751,7 +5999,7 @@ public class mysql_ddlParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\u01e1\u0356\4\2\t"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\u01e1\u0356\4\2\t"+
 		"\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13"+
 		"\t\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
@@ -5823,10 +6071,10 @@ public class mysql_ddlParser extends Parser {
 		"\u015b\u015b\u015e\u0160\u0162\u016b\u016d\u016e\u0170\u0170\u0173\u0179"+
 		"\u017d\u0180\u0184\u0184\u0186\u018a\u018c\u0193\u01be\u01be\3\2\u01c7"+
 		"\u01ce\7\2\u0111\u0111\u0121\u0121\u0130\u0130\u017c\u017c\u01db\u01db"+
-		"\u03e9\2g\3\2\2\2\4o\3\2\2\2\6z\3\2\2\2\b\u0083\3\2\2\2\n\u0085\3\2\2"+
-		"\2\f\u0097\3\2\2\2\16\u00aa\3\2\2\2\20\u00b2\3\2\2\2\22\u00c2\3\2\2\2"+
-		"\24\u00c4\3\2\2\2\26\u00ca\3\2\2\2\30\u00cd\3\2\2\2\32\u00d3\3\2\2\2\34"+
-		"\u00e1\3\2\2\2\36\u00eb\3\2\2\2 \u00ed\3\2\2\2\"\u0102\3\2\2\2$\u010e"+
+		"\2\u03e9\2g\3\2\2\2\4o\3\2\2\2\6z\3\2\2\2\b\u0083\3\2\2\2\n\u0085\3\2"+
+		"\2\2\f\u0097\3\2\2\2\16\u00aa\3\2\2\2\20\u00b2\3\2\2\2\22\u00c2\3\2\2"+
+		"\2\24\u00c4\3\2\2\2\26\u00ca\3\2\2\2\30\u00cd\3\2\2\2\32\u00d3\3\2\2\2"+
+		"\34\u00e1\3\2\2\2\36\u00eb\3\2\2\2 \u00ed\3\2\2\2\"\u0102\3\2\2\2$\u010e"+
 		"\3\2\2\2&\u0117\3\2\2\2(\u011b\3\2\2\2*\u012b\3\2\2\2,\u012f\3\2\2\2."+
 		"\u013e\3\2\2\2\60\u014a\3\2\2\2\62\u015d\3\2\2\2\64\u0165\3\2\2\2\66\u017d"+
 		"\3\2\2\28\u018b\3\2\2\2:\u0192\3\2\2\2<\u01a0\3\2\2\2>\u01a6\3\2\2\2@"+
