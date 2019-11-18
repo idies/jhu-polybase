@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.io.PrintStream;
 import java.io.FileOutputStream;
 
@@ -33,10 +35,16 @@ public class ANTLRTranslator {
 		
 		try {
 			
+			System.out.println("starting translation...");
+			
+			LocalDateTime now = LocalDateTime.now();
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmm");
+			
 			//TODO: make these command line args, or config file?
 			DataSourceName = "mydsp016_nospace";
 			DBName = "cbioportal";
-			String outfilePrefix=DBName+"-20191114";
+			//String outfilePrefix=DBName+"-20191114";
+			String outfilePrefix = DBName + now.format(formatter);
 			
 			ANTLRTranslator t = new ANTLRTranslator();
 			mysql_ddlParser.BatchContext ct = t.parse(new File(args[0]));
@@ -44,7 +52,7 @@ public class ANTLRTranslator {
 			DDLs ddls = v.visitDdl_clauses(ct.ddl_clauses());
 			// data_source=mydsp016 location=cbioportal.<tablename>
 			ExternalTableWriter etw = new ExternalTableWriter(DataSourceName,DBName);
-//			ddls.write(System.out, etw);
+			//ddls.write(System.out, etw);
 			//test: write out to individual files
 			//set FileOutputStream to "false" to overwrite exisiting files
 			//TODO: maybe make this configurable?
@@ -53,6 +61,9 @@ public class ANTLRTranslator {
 			ddls.writeStatisticsStatements(new PrintStream(new FileOutputStream(outfilePrefix + "-stats.sql",false)), etw);
 			ddls.writeTestQueries(new PrintStream(new FileOutputStream(outfilePrefix + "-testqueries.sql",false)), etw);
 			// print(ct);
+			
+			System.out.println("finished writing files.  prefix = " + outfilePrefix);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
