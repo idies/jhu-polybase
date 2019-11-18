@@ -133,8 +133,11 @@ public class MySQLDDLVisitor extends mysql_ddlBaseVisitor<DDLs> {
 			table.addColumn(currentColumn);
 			currentColumn.name = Util.normalize(ctx.id().getText());
 			Data_typeContext dtx = ctx.data_type();
-			String dt_name = dtx.getChild(0).getText();
-			currentColumn.datatype = Util.my2mssql(dt_name);
+			//String dt_name = dtx.getChild(0).getText();
+			//currentColumn.datatype = Util.my2mssql(dt_name);
+			currentColumn.datatype = Util.parseDatatypeToString(dtx);
+			//String blah = Util.parseDatatypeToString(dtx);
+			
 			if (Util.typeHasLength(currentColumn.datatype)) {
 				List<TerminalNode> dec = dtx.DECIMAL_LITERAL();
 				if (dec != null) {
