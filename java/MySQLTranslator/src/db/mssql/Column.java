@@ -4,6 +4,10 @@ import java.io.PrintStream;
 
 public class Column {
 
+	public Column() {
+		super();
+	}
+
 	public String name, datatype, length=null, precision=null, nullnotnull=null, defaultvalue = null;
 	
 	/**

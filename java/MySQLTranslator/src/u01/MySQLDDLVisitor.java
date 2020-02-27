@@ -136,7 +136,7 @@ public class MySQLDDLVisitor extends mysql_ddlBaseVisitor<DDLs> {
 			//String dt_name = dtx.getChild(0).getText();
 			//currentColumn.datatype = Util.my2mssql(dt_name);
 			currentColumn.datatype = Util.parseDatatypeToString(dtx);
-			//String blah = Util.parseDatatypeToString(dtx);
+			
 			
 			if (Util.typeHasLength(currentColumn.datatype)) {
 				List<TerminalNode> dec = dtx.DECIMAL_LITERAL();

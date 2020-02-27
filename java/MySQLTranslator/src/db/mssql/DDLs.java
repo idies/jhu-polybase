@@ -42,12 +42,28 @@ public class DDLs {
 	}
 	*/
 	
+	/*
 	public void writeDropStatements(PrintStream out, ExternalTableWriter et) {
 		for(String t : drops)
 			out.printf("if OBJECT_ID('%s') IS NOT NULL DROP %sTABLE  %s;\n", t,et==null?"":"EXTERNAL ",t);
 		
 	}
 	
+	*/
+	
+	
+	
+	public void writeDropStatements(PrintStream out, ExternalTableWriter et) {
+		//dunno why the drops list is null, use creates list to get tablenames i guess?
+		for(Table t : creates) {
+			if(et == null)
+				t.drop(out, false);
+			else
+				t.drop(out,  true);
+			out.print("\n");
+			
+		}
+	}
 	public void writeCreateStatements(PrintStream out, ExternalTableWriter et) {
 		for(Table t : creates) {
 			if(et == null)

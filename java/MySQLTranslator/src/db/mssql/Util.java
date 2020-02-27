@@ -69,7 +69,7 @@ public class Util {
 	public static String parseDatatypeToString(Data_typeContext dtx) {
 		
 		String dt = dtx.getChild(0).getText().toUpperCase();
-		System.out.println(dt);
+		//System.out.println(dt);
 			
 		//be lame and take care of tinyint(1) = bit special case first
 		//JUST KIDDING SQL SERVER DOESNT LIKE THIS
@@ -83,6 +83,8 @@ public class Util {
 		}
 		*/
 		
+		if ("ENUM".equals(dt))
+			return "NVARCHAR (128)";
 		
 		if("INT".equals(dt))
 			return "INTEGER";
@@ -98,8 +100,10 @@ public class Util {
 			return "NVARCHAR";
 		if("CHAR".equals(dt))
 			return "NCHAR";
+		// sql server can now handle external tables w nvarchar max
 		if("TEXT".equals(dt) || "MEDIUMTEXT".equals(dt) || "LONGTEXT".equals(dt))
-			return "NVARCHAR(4000)";
+			return "NVARCHAR(max)";
+			//return "NVARCHAR(4000)";
 		return dt;
 			
 

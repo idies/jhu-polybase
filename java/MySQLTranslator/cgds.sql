@@ -1,106 +1,3 @@
---
--- Copyright (c) 2016 - 2019 Memorial Sloan-Kettering Cancer Center.
---
--- This library is distributed in the hope that it will be useful, but WITHOUT
--- ANY WARRANTY, WITHOUT EVEN THE IMPLIED WARRANTY OF MERCHANTABILITY OR FITNESS
--- FOR A PARTICULAR PURPOSE. The software and documentation provided hereunder
--- is on an "as is" basis, and Memorial Sloan-Kettering Cancer Center has no
--- obligations to provide maintenance, support, updates, enhancements or
--- modifications. In no event shall Memorial Sloan-Kettering Cancer Center be
--- liable to any party for direct, indirect, special, incidental or
--- consequential damages, including lost profits, arising out of the use of this
--- software and its documentation, even if Memorial Sloan-Kettering Cancer
--- Center has been advised of the possibility of such damage.
---
--- This file is part of cBioPortal.
---
--- cBioPortal is free software: you can redistribute it and/or modify
--- it under the terms of the GNU Affero General Public License as
--- published by the Free Software Foundation, either version 3 of the
--- License.
---
--- This program is distributed in the hope that it will be useful,
--- but WITHOUT ANY WARRANTY; without even the implied warranty of
--- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
--- GNU Affero General Public License for more details.
---
--- You should have received a copy of the GNU Affero General Public License
--- along with this program.  If not, see <http://www.gnu.org/licenses/>.
--- ----------------------------------------------------------------------------
---
--- Database: `cgds`
---
--- --------------------------------------------------------
--- Database table schemas and version number
--- --------------------------------------------------------
--- The order of the following DROP TABLE statements is
--- significant. If a table has a FOREIGN_KEY referring to
--- another table, then it should be dropped before the
--- other table is dropped. The approach taken here is to
--- order the CREATE TABLE statements so that refererenced
--- tables are created before referring tables.
--- DROP TABLE statements are here in the reverse order.
--- --------------------------------------------------------
-
-DROP TABLE IF EXISTS `info`;
-DROP TABLE IF EXISTS `clinical_event_data`;
-DROP TABLE IF EXISTS `clinical_event`;
-DROP TABLE IF EXISTS `pdb_uniprot_residue_mapping`;
-DROP TABLE IF EXISTS `pdb_uniprot_alignment`;
-DROP TABLE IF EXISTS `cosmic_mutation`;
-DROP TABLE IF EXISTS `copy_number_seg_file`;
-DROP TABLE IF EXISTS `copy_number_seg`;
-DROP TABLE IF EXISTS `sample_cna_event`;
-DROP TABLE IF EXISTS `cna_event`;
-DROP TABLE IF EXISTS `drug_interaction`;
-DROP TABLE IF EXISTS `drug`;
-DROP TABLE IF EXISTS `pfam_graphics`;
-DROP TABLE IF EXISTS `text_cache`;
-DROP TABLE IF EXISTS `gistic_to_gene`;
-DROP TABLE IF EXISTS `gistic`;
-DROP TABLE IF EXISTS `sanger_cancer_census`;
-DROP TABLE IF EXISTS `protein_array_cancer_study`;
-DROP TABLE IF EXISTS `protein_array_data`;
-DROP TABLE IF EXISTS `protein_array_target`;
-DROP TABLE IF EXISTS `protein_array_info`;
-DROP TABLE IF EXISTS `mut_sig`;
-DROP TABLE IF EXISTS `interaction`;
-DROP TABLE IF EXISTS `clinical_attribute_meta`;
-DROP TABLE IF EXISTS `clinical_sample`;
-DROP TABLE IF EXISTS `clinical_patient`;
-DROP TABLE IF EXISTS `mutation_count_by_keyword`;
-DROP TABLE IF EXISTS `mutation`;
-DROP TABLE IF EXISTS `mutation_event`;
-DROP TABLE IF EXISTS `structural_variant`;
-DROP TABLE IF EXISTS `sample_profile`;
-DROP TABLE IF EXISTS `gene_panel_list`;
-DROP TABLE IF EXISTS `gene_panel`;
-DROP TABLE IF EXISTS `genetic_profile_samples`;
-DROP TABLE IF EXISTS `genetic_alteration`;
-DROP TABLE IF EXISTS `genetic_profile_link`;
-DROP TABLE IF EXISTS `genetic_profile`;
-DROP TABLE IF EXISTS `uniprot_id_mapping`;
-DROP TABLE IF EXISTS `gene_alias`;
-DROP TABLE IF EXISTS `geneset_gene`;
-DROP TABLE IF EXISTS `reference_genome_gene`;
-DROP TABLE IF EXISTS `gene`;
-DROP TABLE IF EXISTS `sample_list_list`;
-DROP TABLE IF EXISTS `sample_list`;
-DROP TABLE IF EXISTS `sample`;
-DROP TABLE IF EXISTS `patient`;
-DROP TABLE IF EXISTS `authorities`;
-DROP TABLE IF EXISTS `data_access_tokens`;
-DROP TABLE IF EXISTS `users`;
-DROP TABLE IF EXISTS `cancer_study_tags`;
-DROP TABLE IF EXISTS `cancer_study`;
-DROP TABLE IF EXISTS `type_of_cancer`;
-DROP TABLE IF EXISTS `geneset_hierarchy_leaf`;
-DROP TABLE IF EXISTS `geneset_hierarchy_node`;
-DROP TABLE IF EXISTS `geneset`;
-DROP TABLE IF EXISTS `treatment`;
-DROP TABLE IF EXISTS `genetic_entity`;
-DROP TABLE IF EXISTS `reference_genome`;
-
 -- --------------------------------------------------------
 CREATE TABLE `type_of_cancer` (
   `TYPE_OF_CANCER_ID` varchar(63) NOT NULL,
@@ -314,7 +211,7 @@ CREATE TABLE `genetic_profile` (
   `DESCRIPTION` mediumtext,
   `SHOW_PROFILE_IN_ANALYSIS_TAB` tinyint(1) NOT NULL,
   `PIVOT_THRESHOLD` FLOAT DEFAULT NULL,
-  `SORT_ORDER` ENUM('ASC','DESC') DEFAULT NULL,
+  `SORT_ORDER` ENUM("ASC","DESC") DEFAULT NULL,  --sw added double quotes around reserved words asc and desc
   PRIMARY KEY (`GENETIC_PROFILE_ID`),
   UNIQUE (`STABLE_ID`),
   FOREIGN KEY (`CANCER_STUDY_ID`) REFERENCES `cancer_study` (`CANCER_STUDY_ID`) ON DELETE CASCADE
@@ -437,10 +334,10 @@ CREATE TABLE `mutation_event` (
   `REFERENCE_ALLELE` text,
   `TUMOR_SEQ_ALLELE` text,
   `PROTEIN_CHANGE` varchar(255),
-  `MUTATION_TYPE` varchar(255) COMMENT 'e.g. Missense, Nonsence, etc.',
-  `FUNCTIONAL_IMPACT_SCORE` varchar(50) COMMENT 'Result from OMA/XVAR.',
+  `MUTATION_TYPE` varchar(255), -- COMMENT 'e.g. Missense, Nonsence, etc.',
+  `FUNCTIONAL_IMPACT_SCORE` varchar(50), -- COMMENT 'Result from OMA/XVAR.',
   `FIS_VALUE` float,
-  `LINK_XVAR` varchar(500) COMMENT 'Link to OMA/XVAR Landing Page for the specific mutation.',
+  `LINK_XVAR` varchar(500),--  COMMENT 'Link to OMA/XVAR Landing Page for the specific mutation.',
   `LINK_PDB` varchar(500),
   `LINK_MSA` varchar(500),
   `NCBI_BUILD` varchar(10),
@@ -456,12 +353,13 @@ CREATE TABLE `mutation_event` (
   `ONCOTATOR_PROTEIN_POS_START` int(11),
   `ONCOTATOR_PROTEIN_POS_END` int(11),
   `CANONICAL_TRANSCRIPT` boolean,
-  `KEYWORD` varchar(255) DEFAULT NULL COMMENT 'e.g. truncating, V200 Missense, E338del, ',
+  `KEYWORD` varchar(255) DEFAULT NULL, -- COMMENT 'e.g. truncating, V200 Missense, E338del, ',
   KEY (`KEYWORD`),
   PRIMARY KEY (`MUTATION_EVENT_ID`),
-  KEY `KEY_MUTATION_EVENT_DETAILS` (`CHR`, `START_POSITION`, `END_POSITION`, `TUMOR_SEQ_ALLELE`(240), `ENTREZ_GENE_ID`, `PROTEIN_CHANGE`, `MUTATION_TYPE`),
+  --KEY `KEY_MUTATION_EVENT_DETAILS` (`CHR`, `START_POSITION`, `END_POSITION`, `TUMOR_SEQ_ALLELE`(240), `ENTREZ_GENE_ID`, `PROTEIN_CHANGE`, `MUTATION_TYPE`),
   FOREIGN KEY (`ENTREZ_GENE_ID`) REFERENCES `gene` (`ENTREZ_GENE_ID`)
-) COMMENT='Mutation Data';
+) -- COMMENT='Mutation Data'
+;
 
 -- --------------------------------------------------------
 CREATE TABLE `mutation` (
@@ -471,7 +369,7 @@ CREATE TABLE `mutation` (
   `ENTREZ_GENE_ID` int(11) NOT NULL,
   `CENTER` varchar(100),
   `SEQUENCER` varchar(255),
-  `MUTATION_STATUS` varchar(25) COMMENT 'Germline, Somatic or LOH.',
+  `MUTATION_STATUS` varchar(25), -- COMMENT 'Germline, Somatic or LOH.',
   `VALIDATION_STATUS` varchar(25),
   `TUMOR_SEQ_ALLELE1` TEXT,
   `TUMOR_SEQ_ALLELE2` TEXT,
@@ -508,7 +406,8 @@ CREATE TABLE `mutation` (
   FOREIGN KEY (`ENTREZ_GENE_ID`) REFERENCES `gene` (`ENTREZ_GENE_ID`),
   FOREIGN KEY (`GENETIC_PROFILE_ID`) REFERENCES `genetic_profile` (`GENETIC_PROFILE_ID`) ON DELETE CASCADE,
   FOREIGN KEY (`SAMPLE_ID`) REFERENCES `sample` (`INTERNAL_ID`) ON DELETE CASCADE
-) COMMENT='Mutation Data Details';
+) --COMMENT='Mutation Data Details'
+;
 
 -- --------------------------------------------------------
 CREATE TABLE `mutation_count_by_keyword` (
@@ -545,7 +444,7 @@ CREATE TABLE `clinical_attribute_meta` (
   `ATTR_ID` varchar(255) NOT NULL,
   `DISPLAY_NAME` varchar(255) NOT NULL,
   `DESCRIPTION` varchar(2048) NOT NULL,
-  `DATATYPE` varchar(255) NOT NULL COMMENT 'NUMBER, BOOLEAN, or STRING',
+  `DATATYPE` varchar(255) NOT NULL, -- COMMENT 'NUMBER, BOOLEAN, or STRING',
   `PATIENT_ATTRIBUTE` BOOLEAN NOT NULL,
   `PRIORITY` varchar(255) NOT NULL,
   `CANCER_STUDY_ID` int(11) NOT NULL,
@@ -629,7 +528,8 @@ CREATE TABLE `sanger_cancer_census` (
   `OTHER_GERMLINE_MUT` tinyint(1) NOT NULL,
   `OTHER_DISEASE` text NOT NULL,
   FOREIGN KEY (`ENTREZ_GENE_ID`) REFERENCES `gene` (`ENTREZ_GENE_ID`)
-) COMMENT='Sanger Cancer Gene Census';
+) -- COMMENT='Sanger Cancer Gene Census'
+;
 
 -- --------------------------------------------------------
 CREATE TABLE `gistic` (

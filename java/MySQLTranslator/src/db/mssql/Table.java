@@ -37,6 +37,11 @@ public class Table{
 		}
 		out.printf(")");
 	}
+	
+	public void drop(PrintStream out, boolean external) { 
+		out.printf("DROP %s TABLE %s ;%n", external ? "EXTERNAL" : "", Util.safeName(name));
+	}
+	
 	/**
 	 * @todo add statistics for indexes and foreign keys
 	 * @param out

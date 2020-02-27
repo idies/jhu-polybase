@@ -34,6 +34,7 @@ public class Translator {
 	
 	public static void main(String[] args) throws Exception{
 		
+		
 		try {
 			Translator t = new Translator(args[0]);
 			t.run();
@@ -250,13 +251,30 @@ public class Translator {
 	}
 	
 	public static String typeFor(String t){
+		
+		t=t.toUpperCase();
+		
+		if (t.equals("BOOLEAN"))
+			System.out.println("here!");
+		
+		/*
+		 mysql TINYINT(1) == mssql BIT
+		 need special case here to check value
+		 in parens
+		*/
+		if (t.equals("TINYINT(1)")) return "BIT";
+		
+
+
+		
 		String parens="";
 		int index=t.indexOf("(");
 		if(index >=0){
 			parens=t.substring(index);
 			t=t.substring(0,index);
 		}
-		t=t.toUpperCase();
+		if(t.equals("TEXT") && (index == 0)) return "NVARCHAR(4000)"; //max size text
+		if(t.startsWith("TEXT")) return "NVARCHAR"+parens; 	//TEXT(m)
 		if(t.equals("TIMESTAMP")) return "DATETIME";
 		if(t.equals("DOUBLE")) return "FLOAT";
 		if(t.equals("FLOAT")) return "REAL";
