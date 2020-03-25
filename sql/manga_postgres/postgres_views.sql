@@ -1,5 +1,5 @@
 
-CREATE VIEW mangadapdb.v_modelspaxel as
+CREATE OR REPLACE VIEW mangadapdb.v_modelspaxel as
 SELECT pk
 ,      array_to_json(flux) as flux
 ,      array_to_json(ivar) as ivar
@@ -21,13 +21,13 @@ SELECT pk
 ,      array_to_json(stellar_mask) as stellar_mask
   FROM mangadapdb.modelspaxel;
 
-CREATE VIEW mangadapdb.v_redcorr as
+CREATE OR REPLACE VIEW mangadapdb.v_redcorr as
 SELECT pk
 ,      array_to_json(value) as value
 ,      modelcube_pk
   FROM mangadapdb.redcorr;
 
-CREATE VIEW mangadatadb.v_cube as
+CREATE OR REPLACE VIEW mangadatadb.v_cube as
 SELECT pk
 ,      plate
 ,      mangaid
@@ -47,14 +47,14 @@ SELECT pk
 ,      array_to_json(prespecresd) as prespecresd
   FROM mangadatadb.cube;
 
-CREATE VIEW mangadatadb.v_cube_shape as
+CREATE OR REPLACE VIEW mangadatadb.v_cube_shape as
 SELECT pk
 ,      size
 ,      total
 ,      array_to_json(indices) as indices
   FROM mangadatadb.cube_shape;
 
-CREATE VIEW mangadatadb.v_rssfiber as
+CREATE OR REPLACE VIEW mangadatadb.v_rssfiber as
 SELECT pk
 ,      array_to_json(flux) as flux
 ,      array_to_json(ivar) as ivar
@@ -70,7 +70,7 @@ SELECT pk
 ,      array_to_json(predisp) as predisp
   FROM mangadatadb.rssfiber;
 
-CREATE VIEW mangadatadb.v_rssfiber_orig as
+CREATE OR REPLACE VIEW mangadatadb.v_rssfiber_orig as
 SELECT pk
 ,      array_to_json(flux) as flux
 ,      array_to_json(ivar) as ivar
@@ -86,7 +86,7 @@ SELECT pk
 ,      array_to_json(predisp) as predisp
   FROM mangadatadb.rssfiber_orig;
 
-CREATE VIEW mangadatadb.v_spaxel as
+CREATE OR REPLACE VIEW mangadatadb.v_spaxel as
 SELECT pk
 ,      array_to_json(flux) as flux
 ,      array_to_json(ivar) as ivar
@@ -98,7 +98,7 @@ SELECT pk
 ,      array_to_json(predisp) as predisp
   FROM mangadatadb.spaxel;
 
-CREATE VIEW mangadatadb.v_test_spaxel as
+CREATE OR REPLACE VIEW mangadatadb.v_test_spaxel as
 SELECT pk
 ,      array_to_json(flux) as flux
 ,      array_to_json(ivar) as ivar
@@ -107,13 +107,13 @@ SELECT pk
 ,      flux_json
   FROM mangadatadb.test_spaxel;
 
-CREATE VIEW mangadatadb.v_wavelength as
+CREATE OR REPLACE VIEW mangadatadb.v_wavelength as
 SELECT pk
 ,      array_to_json(wavelength) as wavelength
 ,      bintype
   FROM mangadatadb.wavelength;
 
-CREATE VIEW mangasampledb.v_nsa as
+CREATE OR REPLACE VIEW mangasampledb.v_nsa as
 SELECT pk
 ,      iauname
 ,      subdir
